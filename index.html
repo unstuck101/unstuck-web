@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unstuck — Stop Spinning Your Wheels. Start Moving.</title>
+  <meta name="description" content="Unstuck is the coaching experience that turns overwhelm into momentum. Get a proven framework, weekly accountability, and a community that won't let you quit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ======================= NAV ======================= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="#top" aria-label="Unstuck home">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 4v8a7 7 0 0 0 14 0V4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+        </span>
+        <span class="nav__logo-text">unstuck</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#method">The Method</a>
+        <a href="#how">How It Works</a>
+        <a href="#stories">Success Stories</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="#book" class="btn btn--primary btn--sm">Book a Free Call</a>
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="orb orb--1" data-parallax="0.25"></div>
+        <div class="orb orb--2" data-parallax="0.45"></div>
+        <div class="orb orb--3" data-parallax="0.15"></div>
+        <div class="grid-lines"></div>
+        <div class="noise"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <div class="eyebrow reveal">
+            <span class="eyebrow__dot"></span>
+            Now enrolling — next cohort starts soon
+          </div>
+          <h1 class="hero__title reveal" data-delay="1">
+            You're not lazy.<br />
+            You're just <span class="text-gradient">stuck</span>.
+          </h1>
+          <p class="hero__sub reveal" data-delay="2">
+            Unstuck is the 90-day coaching experience that turns overwhelm into momentum —
+            with a proven framework, weekly accountability, and a community that won't let you quit on yourself.
+          </p>
+          <div class="hero__actions reveal" data-delay="3">
+            <a href="#book" class="btn btn--primary btn--lg">
+              Book Your Free Clarity Call
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#how" class="btn btn--ghost btn--lg">See How It Works</a>
+          </div>
+          <div class="hero__proof reveal" data-delay="4">
+            <div class="avatars" aria-hidden="true">
+              <span>JM</span><span>AT</span><span>RK</span><span>DS</span>
+            </div>
+            <div class="hero__proof-text">
+              <div class="stars" aria-label="5 star rating">★★★★★</div>
+              <p>Trusted by <strong>1,200+</strong> people who finally got moving</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" data-delay="2" aria-hidden="true">
+          <div class="hero-card hero-card--main" data-parallax="0.08">
+            <div class="hero-card__header">
+              <span class="hero-card__badge">Momentum Score</span>
+              <span class="hero-card__week">Week 9 of 12</span>
+            </div>
+            <div class="hero-card__score">
+              <span class="count" data-count="87">0</span><small>/100</small>
+            </div>
+            <div class="hero-card__bars">
+              <div class="bar"><i style="--h:38%"></i></div>
+              <div class="bar"><i style="--h:52%"></i></div>
+              <div class="bar"><i style="--h:47%"></i></div>
+              <div class="bar"><i style="--h:64%"></i></div>
+              <div class="bar"><i style="--h:71%"></i></div>
+              <div class="bar"><i style="--h:83%"></i></div>
+            </div>
+            <p class="hero-card__note">Clarity ↑ 42% since week one</p>
+          </div>
+          <div class="hero-card hero-card--float1" data-parallax="0.18">
+            <span class="check">✓</span>
+            <div><strong>Weekly win logged</strong><small>“Finally launched the thing.”</small></div>
+          </div>
+          <div class="hero-card hero-card--float2" data-parallax="0.3">
+            <span class="flame">🔥</span>
+            <div><strong>21-day streak</strong><small>Momentum compounds</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ======================= MARQUEE ======================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Clarity</span><i>✦</i><span>Momentum</span><i>✦</i><span>Accountability</span><i>✦</i><span>Focus</span><i>✦</i><span>Confidence</span><i>✦</i><span>Direction</span><i>✦</i>
+        <span>Clarity</span><i>✦</i><span>Momentum</span><i>✦</i><span>Accountability</span><i>✦</i><span>Focus</span><i>✦</i><span>Confidence</span><i>✦</i><span>Direction</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ======================= PROBLEM ======================= -->
+    <section class="section problem" id="problem">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="kicker">Sound familiar?</span>
+          <h2>Stuck doesn't look like failure.<br />It looks like <span class="text-gradient">busy</span>.</h2>
+          <p>You're doing everything — except the thing that actually matters. Here's what stuck really looks like:</p>
+        </div>
+        <div class="cards-3 stagger">
+          <article class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>The Restart Loop</h3>
+            <p>Every Monday is a new plan. Every Friday it's quietly abandoned. You've "started over" more times than you can count — and it's exhausting.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Decision Paralysis</h3>
+            <p>Too many options, too much advice, zero movement. You keep researching the "right" next step instead of taking any step at all.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 4-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Potential on Pause</h3>
+            <p>You know you're capable of more. That gap between where you are and where you should be? It gets heavier every month you carry it.</p>
+          </article>
+        </div>
+        <p class="problem__bridge reveal">The problem was never your work ethic. <strong>It's that willpower was never the system.</strong></p>
+      </div>
+    </section>
+
+    <!-- ======================= METHOD ======================= -->
+    <section class="section method" id="method">
+      <div class="method__bg" aria-hidden="true">
+        <div class="orb orb--4" data-parallax="0.2"></div>
+      </div>
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="kicker">The Unstuck Method</span>
+          <h2>A system that moves you,<br />even when motivation <span class="text-gradient">doesn't</span>.</h2>
+          <p>Three pillars. Twelve weeks. One version of you that finally follows through.</p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar reveal">
+            <span class="pillar__num">01</span>
+            <div class="pillar__body">
+              <h3>Clarity Mapping</h3>
+              <p>We cut through the noise and find the one goal that actually matters right now — then reverse-engineer it into a plan you can see, measure, and believe in.</p>
+              <ul>
+                <li>1:1 deep-dive clarity session</li>
+                <li>Your personalized 90-day roadmap</li>
+                <li>Weekly priorities that fit real life</li>
+              </ul>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <span class="pillar__num">02</span>
+            <div class="pillar__body">
+              <h3>Momentum Engineering</h3>
+              <p>Small wins, stacked deliberately. We build the habits and feedback loops that make progress automatic — so consistency stops depending on how you feel.</p>
+              <ul>
+                <li>Daily momentum tracker</li>
+                <li>Habit systems built around your schedule</li>
+                <li>Weekly wins review to compound progress</li>
+              </ul>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <span class="pillar__num">03</span>
+            <div class="pillar__body">
+              <h3>Real Accountability</h3>
+              <p>Not an app that nags you — people who know your name and your goal. Weekly coaching calls and a community that celebrates your wins and calls out your excuses.</p>
+              <ul>
+                <li>Weekly live group coaching</li>
+                <li>Accountability pod of 4–6 members</li>
+                <li>Direct coach access when you're slipping</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= STATS ======================= -->
+    <section class="section stats">
+      <div class="container">
+        <div class="stats__grid stagger">
+          <div class="stat reveal">
+            <span class="stat__num"><span class="count" data-count="1200">0</span>+</span>
+            <span class="stat__label">Members unstuck</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__num"><span class="count" data-count="93">0</span>%</span>
+            <span class="stat__label">Finish their 90 days</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__num"><span class="count" data-count="4">0</span>.9</span>
+            <span class="stat__label">Average member rating</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__num"><span class="count" data-count="12">0</span> wks</span>
+            <span class="stat__label">To lasting momentum</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= HOW IT WORKS ======================= -->
+    <section class="section how" id="how">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="kicker">How it works</span>
+          <h2>From stuck to moving in <span class="text-gradient">three steps</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline__line" aria-hidden="true"><span id="timelineFill"></span></div>
+          <article class="step reveal">
+            <div class="step__marker">1</div>
+            <div class="step__card">
+              <h3>Book your free Clarity Call</h3>
+              <p>A 30-minute conversation — no pitch, no pressure. We map where you're stuck, why, and what 90 days of momentum could look like for you.</p>
+            </div>
+          </article>
+          <article class="step reveal">
+            <div class="step__marker">2</div>
+            <div class="step__card">
+              <h3>Get your 90-day roadmap</h3>
+              <p>If we're a fit, you join the next cohort and we build your personalized plan in week one — one goal, clear milestones, zero guesswork.</p>
+            </div>
+          </article>
+          <article class="step reveal">
+            <div class="step__marker">3</div>
+            <div class="step__card">
+              <h3>Move — with people in your corner</h3>
+              <p>Weekly coaching, daily tracking, real accountability. Twelve weeks later, you're not hoping for momentum. You've built it.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= TESTIMONIALS ======================= -->
+    <section class="section stories" id="stories">
+      <div class="stories__bg" aria-hidden="true">
+        <div class="orb orb--5" data-parallax="0.22"></div>
+      </div>
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="kicker">Success stories</span>
+          <h2>People who stopped waiting<br />and started <span class="text-gradient">moving</span></h2>
+        </div>
+        <div class="cards-3 stagger">
+          <figure class="quote reveal">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <blockquote>“I spent two years ‘about to start’ my business. Nine weeks into Unstuck, I had my first paying client. The roadmap made it obvious; the accountability made it happen.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">SR</span>
+              <div><strong>Sarah R.</strong><small>Founder, launched at week 9</small></div>
+            </figcaption>
+          </figure>
+          <figure class="quote reveal">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <blockquote>“I'd read every productivity book and was still stuck. This is different — it's not information, it's momentum. My pod texts me when I go quiet. That changed everything.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">MK</span>
+              <div><strong>Marcus K.</strong><small>Engineer → side-project shipped</small></div>
+            </figcaption>
+          </figure>
+          <figure class="quote reveal">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <blockquote>“The Clarity Call alone was worth more than months of overthinking. For the first time I could see the path — and twelve weeks later I'd walked it. I feel like myself again.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">DL</span>
+              <div><strong>Dana L.</strong><small>Career change, completed cohort 7</small></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= OFFER / CTA ======================= -->
+    <section class="section offer" id="book">
+      <div class="container">
+        <div class="offer__card reveal">
+          <div class="offer__glow" aria-hidden="true"></div>
+          <span class="kicker kicker--light">Ready when you are</span>
+          <h2>Your next 90 days are<br />happening <span class="text-gradient">either way</span>.</h2>
+          <p>Spend them stuck — or spend them building momentum with a coach, a plan, and a community behind you. It starts with one free call.</p>
+          <div class="offer__actions">
+            <a href="#" class="btn btn--primary btn--xl" id="bookBtn">
+              Book Your Free Clarity Call
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="offer__assurance">
+              <span>✓ 30 minutes, zero pressure</span>
+              <span>✓ Leave with clarity even if you don't join</span>
+              <span>✓ Limited spots per cohort</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= FAQ ======================= -->
+    <section class="section faq" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <span class="kicker">Questions</span>
+          <h2>Everything you're <span class="text-gradient">wondering</span></h2>
+        </div>
+        <div class="faq__list stagger">
+          <details class="faq__item reveal">
+            <summary>Who is Unstuck for?<span class="faq__chev" aria-hidden="true"></span></summary>
+            <div class="faq__body"><p>Anyone with a meaningful goal they keep circling — starting a business, changing careers, finishing a project, rebuilding habits. If you're capable but stalled, this was built for you.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>How much time does it take each week?<span class="faq__chev" aria-hidden="true"></span></summary>
+            <div class="faq__body"><p>Plan for one 60-minute coaching call plus a few minutes of daily tracking. The rest is time you're already spending — we just point it at the right things.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>What if I've tried coaching or courses before?<span class="faq__chev" aria-hidden="true"></span></summary>
+            <div class="faq__body"><p>Most of our members have. Courses give you information; Unstuck gives you a system and people. The difference isn't what you know — it's what you consistently do, and that's exactly what we engineer.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>What happens on the free Clarity Call?<span class="faq__chev" aria-hidden="true"></span></summary>
+            <div class="faq__body"><p>We spend 30 minutes mapping where you're stuck and what's actually in the way. You leave with a clear next step whether or not you join a cohort. No scripts, no pressure.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Is there a guarantee?<span class="faq__chev" aria-hidden="true"></span></summary>
+            <div class="faq__body"><p>Yes. Do the work for the first 30 days — show up to calls, track your days — and if you don't feel real momentum, we'll refund you in full. The risk of staying stuck is yours; this one is ours.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="nav__logo" href="#top" aria-label="Unstuck home">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 4v8a7 7 0 0 0 14 0V4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+        </span>
+        <span class="nav__logo-text">unstuck</span>
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#method">The Method</a>
+        <a href="#how">How It Works</a>
+        <a href="#stories">Stories</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:hello@joinunstuck.com">Contact</a>
+      </nav>
+      <p class="footer__legal">© <span id="year"></span> Unstuck. All rights reserved. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
