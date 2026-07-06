@@ -1,4 +1,4 @@
-/* Unstuck landing page interactions */
+/* Steward Sober Living — landing page interactions */
 (function () {
   "use strict";
 
@@ -43,9 +43,9 @@
     for (var i = 0; i < parallaxEls.length; i++) {
       var el = parallaxEls[i];
       var rect = el.getBoundingClientRect();
-      if (rect.bottom < -200 || rect.top > window.innerHeight + 200) continue;
+      if (rect.bottom < -300 || rect.top > window.innerHeight + 300) continue;
       var speed = parseFloat(el.getAttribute("data-parallax")) || 0.2;
-      el.style.transform = "translate3d(0," + (y * speed * -0.35).toFixed(1) + "px,0)";
+      el.style.transform = "translate3d(0," + (y * speed * -0.3).toFixed(1) + "px,0)";
     }
   }
 
@@ -75,7 +75,7 @@
   }, { passive: true });
 
   /* ---------- Reveal on scroll ---------- */
-  var revealEls = document.querySelectorAll(".reveal, .step");
+  var revealEls = document.querySelectorAll(".reveal, .step, .map, .flourish");
   if ("IntersectionObserver" in window && !prefersReducedMotion) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -84,22 +84,28 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---------- Count-up numbers ---------- */
+  /* ---------- Count-up numbers (supports decimals) ---------- */
   function animateCount(el) {
-    var target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    var duration = 1600;
+    var target = parseFloat(el.getAttribute("data-count")) || 0;
+    var decimals = parseInt(el.getAttribute("data-decimals"), 10) || 0;
+    var duration = 1800;
     var start = null;
+    function format(v) {
+      return decimals > 0
+        ? v.toFixed(decimals)
+        : Math.round(v).toLocaleString();
+    }
     function tick(ts) {
       if (start === null) start = ts;
       var p = Math.min((ts - start) / duration, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased).toLocaleString();
+      el.textContent = format(target * eased);
       if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -118,7 +124,29 @@
     counters.forEach(function (el) { cio.observe(el); });
   } else {
     counters.forEach(function (el) {
-      el.textContent = parseInt(el.getAttribute("data-count"), 10).toLocaleString();
+      var decimals = parseInt(el.getAttribute("data-decimals"), 10) || 0;
+      var v = parseFloat(el.getAttribute("data-count")) || 0;
+      el.textContent = decimals > 0 ? v.toFixed(decimals) : v.toLocaleString();
+    });
+  }
+
+  /* ---------- Gold dust particles ---------- */
+  if (!prefersReducedMotion) {
+    document.querySelectorAll("[data-particles]").forEach(function (host) {
+      var n = parseInt(host.getAttribute("data-particles"), 10) || 10;
+      for (var i = 0; i < n; i++) {
+        var p = document.createElement("span");
+        var size = 2 + Math.random() * 3;
+        p.className = "particle";
+        p.style.width = size + "px";
+        p.style.height = size + "px";
+        p.style.left = (Math.random() * 100).toFixed(1) + "%";
+        p.style.top = (55 + Math.random() * 45).toFixed(1) + "%";
+        p.style.setProperty("--dur", (11 + Math.random() * 12).toFixed(1) + "s");
+        p.style.setProperty("--del", (Math.random() * 12).toFixed(1) + "s");
+        p.style.setProperty("--op", (0.25 + Math.random() * 0.4).toFixed(2));
+        host.appendChild(p);
+      }
     });
   }
 
@@ -133,13 +161,16 @@
     });
   });
 
-  /* ---------- Booking CTA ----------
-     Point this at the live calendar / funnel step. */
-  var BOOKING_URL = "#book"; // e.g. https://api.leadconnectorhq.com/widget/booking/XXXX
-  var bookBtn = document.getElementById("bookBtn");
-  if (bookBtn && BOOKING_URL !== "#book") {
-    bookBtn.setAttribute("href", BOOKING_URL);
-  }
+  /* ---------- Buyer's list CTA ----------
+     Point this at the live GoHighLevel form / calendar. */
+  var BUYERS_LIST_URL = ""; // e.g. https://api.leadconnectorhq.com/widget/form/XXXX
+  document.querySelectorAll("#buyersListBtn, [data-buyers-list]").forEach(function (btn) {
+    if (BUYERS_LIST_URL) {
+      btn.setAttribute("href", BUYERS_LIST_URL);
+    } else {
+      btn.setAttribute("href", "#join");
+    }
+  });
 
   /* ---------- Footer year ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
