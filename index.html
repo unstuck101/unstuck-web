@@ -351,7 +351,17 @@
     color:var(--ember-light); display:block; margin-bottom:10px;
   }
   #ghl-calendar-embed .placeholder-msg p{ color:var(--text-dim); font-size:13.5px; }
-  #ghl-calendar-embed.is-live{ border-style:solid; padding:0; }
+  #ghl-calendar-embed.is-live{
+    border-style:solid;
+    padding:0;
+    background:var(--bg-alt);
+    display:block;
+  }
+  #ghl-calendar-embed.is-live iframe{
+    width:100%;
+    min-height:640px;
+    border-radius:12px;
+  }
 
   .next-card{ display:flex; flex-direction:column; }
   .next-body{ padding:0 22px 22px; display:flex; flex-direction:column; gap:18px; flex:1; }
@@ -551,7 +561,7 @@
         <div class="host-avatar">T</div>
         <div>
           <h3>"I've been in the ashes."</h3>
-          <span class="role">Travis · Host, From the Ashes</span>
+          <span class="role">Travis · Host</span>
           <p>God rebuilt me there. And I've walked hundreds of men through the same fire — storm, fire, and aftermath.</p>
           <p>This Thursday night, I'm going live to walk you through it too. One hour. No fluff — just the truth about where you are, and what's next.</p>
           <p class="sig">— Travis</p>
@@ -626,10 +636,8 @@
                automatically once real content is detected).
                ============================================================ -->
           <div id="ghl-calendar-embed">
-            <div class="placeholder-msg">
-              <span class="tag">Calendar Embed Goes Here</span>
-              <p>Drop your GoHighLevel booking widget code into <code>#ghl-calendar-embed</code> in index.html.</p>
-            </div>
+            <iframe src="https://api.joinunstuck.com/widget/booking/V7TzORsfd4VjVGQ3Lkoj" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="V7TzORsfd4VjVGQ3Lkoj_1784239707605"></iframe>
+            <script src="https://api.joinunstuck.com/js/form_embed.js" type="text/javascript"></script>
           </div>
         </div>
 
