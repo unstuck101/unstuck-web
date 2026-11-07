@@ -23,3 +23,6 @@ To change the card, regenerate the base64 vCard and replace the `CARD` string in
 
 Note: the gate is a handshake, not a lock. Someone who reads the page source could decode the work-cell card.
 That's by design for a business line. Never put a personal number in here.
+
+## Scan mode
+The "Scan" button (top right) shows a full-screen QR code of this page with `?src=scan`, so the handshake happens on the OTHER person's phone when Travis is showing his own screen. "Text Them the Link" uses the phone's share sheet. The QR is generated in-page (no external library). Leads from it carry the `src-scan` tag.

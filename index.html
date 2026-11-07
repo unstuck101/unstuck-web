@@ -64,8 +64,27 @@ footer{text-align:center;color:var(--m);font-size:11.5px;margin-top:26px;letter-
 .bar.show{transform:none}
 .bar button{max-width:428px;margin:0 auto}
 .bar svg{stroke:#111}
+
+/* Scan mode */
+.scanbtn{position:absolute;top:14px;right:14px;z-index:5;display:flex;align-items:center;gap:7px;padding:9px 13px;border-radius:99px;border:1px solid var(--g2);background:rgba(43,47,53,.85);color:var(--g2);font:700 12px Inter,sans-serif;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(6px)}
+.scanbtn svg{width:18px;height:18px;stroke:var(--g2)}
+.w{position:relative}
+.scan{position:fixed;inset:0;z-index:40;background:rgba(27,30,34,.97);display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px 18px calc(24px + env(safe-area-inset-bottom));text-align:center;overflow:auto}
+.scan.on{display:flex;animation:in .2s ease}
+.scan .nm{font-family:Oswald,sans-serif;font-size:26px;letter-spacing:2px;text-transform:uppercase;margin-top:6px}
+.scan .hint{color:var(--g2);font-weight:700;letter-spacing:2px;font-size:12px;text-transform:uppercase;margin:4px 0 16px}
+.tile{background:#fff;padding:8px;border-radius:18px;box-shadow:0 0 0 6px rgba(232,195,90,.35),0 18px 40px rgba(0,0,0,.5);width:min(78vw,300px);aspect-ratio:1}
+.tile svg{width:100%;height:100%;display:block;stroke:none;stroke-width:0;fill:#000}.tile svg rect{fill:#fff}.tile svg path{fill:#000;stroke:none}
+.scan .cap{color:#eef0f2;font-size:17px;font-weight:600;margin-top:18px;line-height:1.4}
+.scan .sub{color:var(--m);font-size:13.5px;margin-top:4px}
+.scan .acts{width:min(90vw,360px);margin-top:18px}
+.scan .acts .btn{font-size:16px;padding:14px}
+.xbtn{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+body.lock{overflow:hidden}
+body.lock .bar{display:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></head><body><main class="w">
+<button class="scanbtn" id="scanbtn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="4" height="4"/><rect x="13" y="7" width="4" height="4"/><rect x="7" y="13" width="4" height="4"/><path d="M13 13h4v4"/></svg>Scan</button>
 <div class="shield"><img src="/mrunstuck-shield.png" alt="MR. UNSTUCK"></div>
 <h1>Travis Ala</h1><div class="h">@MRUNSTUCK</div>
 <div class="ti">Marine · Former SWAT · Founder of Unstuck</div>
@@ -124,6 +143,17 @@ footer{text-align:center;color:var(--m);font-size:11.5px;margin-top:26px;letter-
 <footer>BUILDING WARRIORS</footer>
 </main>
 
+
+<div class="scan" id="scan" role="dialog" aria-modal="true" aria-labelledby="scannm">
+<button class="xbtn" id="scanx" type="button" aria-label="Close">×</button>
+<img src="/mrunstuck-shield.png" alt="" style="width:64px;height:auto;filter:drop-shadow(0 0 12px rgba(232,195,90,.45))">
+<div class="nm" id="scannm">Travis Ala</div>
+<div class="hint">@MRUNSTUCK</div>
+<div class="tile" id="tile" aria-label="QR code that opens this card"></div>
+<div class="cap">Point your camera here</div>
+<div class="sub">Opens this card on your phone so you can save my number.</div>
+<div class="acts"><button class="btn gold" id="sharebtn" type="button"><svg viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13"/></svg>Text Them the Link</button><button class="btn ghost" id="copybtn" type="button">Copy Link</button></div>
+</div>
 <div class="bar" id="bar"><button class="btn gold" id="barbtn" type="button" style="margin-top:0"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Contact</button></div>
 
 <script>
@@ -179,6 +209,79 @@ footer{text-align:center;color:var(--m);font-size:11.5px;margin-top:26px;letter-
     var crm=fetch(HOOK,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body,keepalive:true}).catch(function(){});
     Promise.all([saved,crm]).then(function(){btn.disabled=false;btn.textContent='Unlock My Contact';unlock()});
   });
+
+
+  // ---- Scan mode: hand the card to the OTHER person's phone ----
+// Minimal QR encoder: byte mode, EC level M, versions 1-6 (up to 108 bytes). Returns 2-D boolean matrix.
+function qrMatrix(text){
+  var bytes=[];for(var i=0;i<text.length;i++){var c=text.charCodeAt(i);if(c>127)throw new Error('ascii only');bytes.push(c)}
+  var CAP=[16,28,44,32*2,43*2,27*4], TOTAL=[26,44,70,100,134,172], ECW=[10,16,26,18,24,16], BLK=[1,1,1,2,2,4];
+  var ALIGN=[[],[6,18],[6,22],[6,26],[6,30],[6,34]];
+  var v=-1;for(var k=0;k<6;k++){if(bytes.length<=CAP[k]-0){v=k;break}}
+  if(v<0)throw new Error('too long');
+  // data bitstream
+  var bits=[];function put(val,n){for(var b=n-1;b>=0;b--)bits.push((val>>b)&1)}
+  put(4,4);put(bytes.length,8);for(i=0;i<bytes.length;i++)put(bytes[i],8);
+  var dataCW=CAP[v];for(i=0;i<4&&bits.length<dataCW*8;i++)bits.push(0);
+  while(bits.length%8)bits.push(0);
+  var data=[];for(i=0;i<bits.length;i+=8){var x=0;for(var j=0;j<8;j++)x=(x<<1)|bits[i+j];data.push(x)}
+  for(var p=0;data.length<dataCW;p^=1)data.push(p?0x11:0xEC);
+  // GF(256)
+  var EXP=new Array(512),LOG=new Array(256);for(i=0,x=1;i<255;i++){EXP[i]=x;LOG[x]=i;x<<=1;if(x&256)x^=0x11d}for(i=255;i<512;i++)EXP[i]=EXP[i-255];
+  function mul(a,b){return a&&b?EXP[LOG[a]+LOG[b]]:0}
+  var ec=ECW[v],gen=[1];for(i=0;i<ec;i++){var ng=new Array(gen.length+1).fill(0);for(j=0;j<gen.length;j++){ng[j]^=gen[j];ng[j+1]^=mul(gen[j],EXP[i])}gen=ng}
+  function rs(block){var r=block.concat(new Array(ec).fill(0));for(var ii=0;ii<block.length;ii++){var coef=r[ii];if(coef)for(var jj=0;jj<gen.length;jj++)r[ii+jj]^=mul(gen[jj],coef)}return r.slice(block.length)}
+  var nb=BLK[v],per=dataCW/nb,blocks=[],ecs=[];
+  for(i=0;i<nb;i++){var bl=data.slice(i*per,(i+1)*per);blocks.push(bl);ecs.push(rs(bl))}
+  var out=[];for(i=0;i<per;i++)for(j=0;j<nb;j++)out.push(blocks[j][i]);for(i=0;i<ec;i++)for(j=0;j<nb;j++)out.push(ecs[j][i]);
+  // matrix
+  var N=17+4*(v+1),M=[],F=[];for(i=0;i<N;i++){M.push(new Array(N).fill(false));F.push(new Array(N).fill(false))}
+  function set(r,c,val){M[r][c]=val;F[r][c]=true}
+  function finder(r,c){for(i=-1;i<=7;i++)for(j=-1;j<=7;j++){var rr=r+i,cc=c+j;if(rr<0||cc<0||rr>=N||cc>=N)continue;var on=(i>=0&&i<=6&&j>=0&&j<=6)&&(i==0||i==6||j==0||j==6||(i>=2&&i<=4&&j>=2&&j<=4));set(rr,cc,on)}}
+  finder(0,0);finder(0,N-7);finder(N-7,0);
+  for(i=8;i<N-8;i++){set(6,i,i%2==0);set(i,6,i%2==0)}
+  var al=ALIGN[v];for(var a=0;a<al.length;a++)for(var b=0;b<al.length;b++){var r=al[a],c=al[b];if(F[r][c])continue;for(i=-2;i<=2;i++)for(j=-2;j<=2;j++)set(r+i,c+j,Math.max(Math.abs(i),Math.abs(j))!=1)}
+  set(N-8,8,true);
+  for(i=0;i<9;i++){F[8][i]=true;F[i][8]=true}for(i=0;i<8;i++){F[8][N-1-i]=true;F[N-1-i][8]=true}
+  // place data
+  var bi=0,allbits=[];for(i=0;i<out.length;i++)for(j=7;j>=0;j--)allbits.push((out[i]>>j)&1);
+  var up=true;for(var col=N-1;col>0;col-=2){if(col==6)col--;for(var s=0;s<N;s++){var row=up?N-1-s:s;for(var d=0;d<2;d++){var cc2=col-d;if(F[row][cc2])continue;M[row][cc2]=bi<allbits.length?allbits[bi]==1:false;bi++}}up=!up}
+  // masks
+  var MASK=[function(r,c){return (r+c)%2==0},function(r,c){return r%2==0},function(r,c){return c%3==0},function(r,c){return (r+c)%3==0},function(r,c){return (Math.floor(r/2)+Math.floor(c/3))%2==0},function(r,c){return (r*c)%2+(r*c)%3==0},function(r,c){return ((r*c)%2+(r*c)%3)%2==0},function(r,c){return ((r+c)%2+(r*c)%3)%2==0}];
+  function fmtBits(mask){var dat=(0<<3)|mask;var val=dat<<10;for(var ii=14;ii>=10;ii--)if((val>>ii)&1)val^=0x537<<(ii-10);return ((dat<<10)|val)^0x5412}
+  function applyFormat(G,mask){var f=fmtBits(mask);for(var ii=0;ii<15;ii++){var bit=((f>>ii)&1)==1;
+    if(ii<6)G[ii][8]=bit;else if(ii<8)G[ii+1][8]=bit;else if(ii==8)G[8][7]=bit;else G[8][14-ii]=bit;
+    if(ii<8)G[8][N-1-ii]=bit;else G[N-15+ii][8]=bit;}}
+  function penalty(G){var s=0,r,c;
+    for(r=0;r<N;r++){var run=1;for(c=1;c<N;c++){if(G[r][c]==G[r][c-1]){run++;if(run==5)s+=3;else if(run>5)s++}else run=1}}
+    for(c=0;c<N;c++){run=1;for(r=1;r<N;r++){if(G[r][c]==G[r-1][c]){run++;if(run==5)s+=3;else if(run>5)s++}else run=1}}
+    for(r=0;r<N-1;r++)for(c=0;c<N-1;c++){var q=G[r][c];if(q==G[r][c+1]&&q==G[r+1][c]&&q==G[r+1][c+1])s+=3}
+    var pat=[true,false,true,true,true,false,true,false,false,false,false],pat2=pat.slice().reverse();
+    for(r=0;r<N;r++)for(c=0;c<=N-11;c++){var ok1=true,ok2=true;for(i=0;i<11;i++){if(G[r][c+i]!=pat[i])ok1=false;if(G[r][c+i]!=pat2[i])ok2=false}if(ok1||ok2)s+=40}
+    for(c=0;c<N;c++)for(r=0;r<=N-11;r++){ok1=true;ok2=true;for(i=0;i<11;i++){if(G[r+i][c]!=pat[i])ok1=false;if(G[r+i][c]!=pat2[i])ok2=false}if(ok1||ok2)s+=40}
+    var dark=0;for(r=0;r<N;r++)for(c=0;c<N;c++)if(G[r][c])dark++;var pct=dark*100/(N*N);s+=Math.floor(Math.abs(pct-50)/5)*10;return s}
+  var best=null,bestScore=1e9;
+  for(var m=0;m<8;m++){var G=M.map(function(row){return row.slice()});for(r=0;r<N;r++)for(c=0;c<N;c++)if(!F[r][c]&&MASK[m](r,c))G[r][c]=!G[r][c];applyFormat(G,m);var sc=penalty(G);if(sc<bestScore){bestScore=sc;best=G}}
+  return best;
+}
+function qrSvg(text,cell,margin){var G=qrMatrix(text),N=G.length,S=(N+2*margin)*cell,d='';for(var r=0;r<N;r++)for(var c=0;c<N;c++)if(G[r][c])d+='M'+((c+margin)*cell)+' '+((r+margin)*cell)+'h'+cell+'v'+cell+'h-'+cell+'z';return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+S+' '+S+'" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="#fff"/><path d="'+d+'" fill="#000"/></svg>'}
+
+  var SCAN_URL=location.origin+'/?src=scan';
+  var scan=$('scan'),tile=$('tile');
+  function openScan(){ if(!tile.innerHTML){try{tile.innerHTML=qrSvg(SCAN_URL,1,3)}catch(e){tile.textContent=SCAN_URL}}
+    scan.classList.add('on');document.body.classList.add('lock');$('scanx').focus() }
+  function closeScan(){scan.classList.remove('on');document.body.classList.remove('lock');$('scanbtn').focus()}
+  $('scanbtn').addEventListener('click',openScan);$('scanx').addEventListener('click',closeScan);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&scan.classList.contains('on'))closeScan()});
+  if(qs.get('scan')==='1')openScan();
+  $('sharebtn').addEventListener('click',function(){
+    var msg="Good meeting you. Here's my contact: "+SCAN_URL;
+    if(navigator.share){navigator.share({title:'Travis Ala',text:msg,url:SCAN_URL}).catch(function(){})}
+    else{location.href='sms:?&body='+encodeURIComponent(msg)}
+  });
+  $('copybtn').addEventListener('click',function(){var b=this;
+    (navigator.clipboard?navigator.clipboard.writeText(SCAN_URL):Promise.reject()).then(function(){b.textContent='Copied'},function(){window.prompt('Copy this link',SCAN_URL)});
+    setTimeout(function(){b.textContent='Copy Link'},1800)});
 
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(e){$('bar').classList.toggle('show',!e[0].isIntersecting && !shake.classList.contains('on'))},{threshold:0}).observe(openBtn);
