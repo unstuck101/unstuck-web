@@ -26,12 +26,12 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stro
 .scanbtn svg.i{width:18px;height:18px}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;min-height:700px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:22px}
-.hero .ph{position:absolute;left:0;right:0;top:0;height:430px;z-index:0;background:radial-gradient(60% 62% at 52% 42%,rgba(227,18,43,.34) 0%,rgba(227,18,43,.10) 48%,rgba(10,10,11,0) 74%),url(/travis-cutout.webp) 52% 0 / 122% auto no-repeat}
-.hero .ph:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,0) 0%,rgba(10,10,11,0) 38%,rgba(10,10,11,.78) 70%,var(--ink) 96%)}
+.hero{position:relative;overflow:hidden;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;padding-top:230px;padding-bottom:18px}
+.hero .ph{position:absolute;left:0;right:0;top:0;height:340px;z-index:0;background:radial-gradient(58% 60% at 54% 40%,rgba(227,18,43,.34) 0%,rgba(227,18,43,.10) 50%,rgba(10,10,11,0) 76%),url(/travis-cutout.webp) 54% 0 / 118% auto no-repeat}
+.hero .ph:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,0) 0%,rgba(10,10,11,0) 40%,rgba(10,10,11,.82) 74%,var(--ink) 98%)}
 .hero > .pad{position:relative;z-index:1}
 .eyebrow{font:700 11.5px/1.3 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--red)}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,15vw,68px);line-height:.95;letter-spacing:.5px;text-transform:uppercase;margin-top:10px;text-wrap:balance}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,15vw,68px);line-height:.95;letter-spacing:.5px;text-transform:uppercase;margin-top:8px;text-wrap:balance}
 .lede{font-family:var(--serif);font-style:italic;font-weight:500;font-size:28px;line-height:1.1;color:var(--red2);margin-top:6px}
 .sub{color:var(--bone2);font-size:16px;margin-top:12px;max-width:34ch}
 
@@ -41,10 +41,10 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,15vw,68px);li
 .btn.red:hover{background:var(--red2);transform:translateY(-2px)}
 .btn.ghost{background:transparent;border:1px solid rgba(243,239,232,.25);color:var(--bone)}
 .btn svg.i{width:18px;height:18px}
-.btn.big{padding:21px 20px;font-size:15px;margin-top:18px}
+.btn.big{padding:19px 20px;font-size:15px;margin-top:14px}
 .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
 .row3 .btn{margin-top:0;padding:14px 8px;font-size:12px}
-.quiet{display:block;text-align:center;margin-top:16px;color:var(--bone2);font-size:15px;text-decoration:underline;text-underline-offset:4px}
+.quiet{display:block;text-align:center;margin-top:20px;color:var(--bone2);font-size:15px;text-decoration:underline;text-underline-offset:4px}
 
 /* Panels (handshake + unlocked) */
 .panel{display:none;margin:14px 0 0;background:var(--ink2);border:1px solid var(--line);border-top:3px solid var(--red);padding:20px 18px 18px}
@@ -120,7 +120,7 @@ body.lock .bar{display:none}
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes kb{from{transform:scale(1.08) translateY(-6px)}to{transform:none}}
 @keyframes glow{0%,100%{box-shadow:0 10px 30px -10px rgba(227,18,43,.7)}50%{box-shadow:0 14px 40px -8px rgba(227,18,43,1)}}
-@keyframes cue{0%{transform:translateY(-14px);opacity:0}30%{opacity:1}100%{transform:translateY(14px);opacity:0}}
+@keyframes cue{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% + 5px))}}
 @keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
 @keyframes draw{to{stroke-dashoffset:0}}
 .hero .ph{animation:kb 12s ease-out both}
@@ -128,10 +128,6 @@ body.lock .bar{display:none}
 .hero .a1{animation-delay:.05s}.hero .a2{animation-delay:.18s}.hero .a3{animation-delay:.32s}.hero .a4{animation-delay:.44s}.hero .a5{animation-delay:.56s}.hero .a6{animation-delay:.68s}
 .btn.big{animation:up .7s .56s cubic-bezier(.2,.7,.2,1) both,glow 2.8s 1.4s ease-in-out infinite}
 .btn.big.unl{animation:glow 2.8s ease-in-out infinite}
-.cue{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:22px;color:var(--mute);font:700 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;transition:opacity .4s}
-.cue i{display:block;width:1px;height:34px;background:var(--line);position:relative;overflow:hidden}
-.cue i:after{content:'';position:absolute;left:0;top:0;width:1px;height:14px;background:var(--red2);animation:cue 1.6s ease-in-out infinite}
-.cue.off{opacity:0;pointer-events:none}
 html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1)}
 html.js .rv.in{opacity:1;transform:none}
 html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.js .rv.d3{transition-delay:.24s}
@@ -174,6 +170,11 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 .badges{display:flex;gap:8px;margin-top:8px}.badges a{flex:1;display:flex;justify-content:center;align-items:center;border:1px solid var(--line);background:var(--ink);padding:6px;border-radius:2px}.badges img{height:36px;width:auto;max-width:100%;display:block}
 .hide{display:none!important}
 
+/* Fold cue */
+.fold{position:relative}
+.cue{position:absolute;left:50%;top:0;z-index:4;width:34px;height:34px;border-radius:50%;background:var(--ink);border:1px solid var(--red);color:var(--red2);display:flex;align-items:center;justify-content:center;transform:translate(-50%,-50%);animation:cue 1.6s ease-in-out infinite;box-shadow:0 0 0 5px rgba(10,10,11,.9),0 6px 18px -4px rgba(227,18,43,.7);transition:opacity .4s}
+.cue svg.i{width:18px;height:18px;stroke:currentColor}
+.cue.off{opacity:0;pointer-events:none}
 /* Proof ticker */
 .tick{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink2);margin-top:4px}
 .tick .tr{display:flex;width:max-content;animation:tick 32s linear infinite}
@@ -192,7 +193,7 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 .qc b{display:block;font-size:14.5px}.qc small{display:block;color:var(--mute);font-size:12.5px;line-height:1.3}
 .dots{display:flex;gap:6px;justify-content:center;margin-top:-4px}.dots i{width:18px;height:3px;background:var(--line);transition:background .2s}.dots i.on{background:var(--red)}
 .btn:active,.brc:active{transform:scale(.985)}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}html.js .rv{opacity:1;transform:none}.cue{display:none}.tick .tr{animation:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}html.js .rv{opacity:1;transform:none}.cue{animation:none}.tick .tr{animation:none}}
 
 </style></head><body><main class="w">
 
@@ -207,13 +208,11 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 <div class="eyebrow a a1">USMC · SWAT · Founder of Unstuck</div>
 <h1 class="a a2">Travis Ala</h1>
 <div class="lede a a3">Good to meet you.</div>
-<p class="sub a a4">Save my contact. Then tell me who you are so I can save yours.</p>
 <button class="btn red big" id="open" type="button" aria-controls="shake" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Contact →</button>
 <div class="row3 a a6"><a class="btn ghost" href="tel:+14699660310">Call</a><a class="btn ghost" href="sms:+14699660310">Text</a><a class="btn ghost" href="mailto:support@mrunstuck.com">Email</a></div>
-<a class="cue a a6" id="cue" href="#story" aria-label="Scroll for more"><i></i>Scroll</a>
 </div>
 </section>
-<div class="tick" aria-label="About Travis"><div class="tr"><span>Forbes Business Council member</span><span>Built 12+ seven-figure businesses</span><span>1,000+ men coached</span><span>U.S. Marine veteran</span><span>Former SWAT operator</span><span>Husband &amp; father first</span><span>Host, Notorious Sinner Podcast</span><span>Founder, The King's Foundation</span><span>Forbes Business Council member</span><span>Built 12+ seven-figure businesses</span><span>1,000+ men coached</span><span>U.S. Marine veteran</span><span>Former SWAT operator</span><span>Husband &amp; father first</span><span>Host, Notorious Sinner Podcast</span><span>Founder, The King's Foundation</span></div></div>
+<div class="fold"><a class="cue" id="cue" href="#story" aria-label="Scroll for more"><svg class="i" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a><div class="tick" aria-label="About Travis"><div class="tr"><span>Forbes Business Council member</span><span>Built 12+ seven-figure businesses</span><span>1,000+ men coached</span><span>U.S. Marine veteran</span><span>Former SWAT operator</span><span>Husband &amp; father first</span><span>Host, Notorious Sinner Podcast</span><span>Founder, The King's Foundation</span><span>Forbes Business Council member</span><span>Built 12+ seven-figure businesses</span><span>1,000+ men coached</span><span>U.S. Marine veteran</span><span>Former SWAT operator</span><span>Husband &amp; father first</span><span>Host, Notorious Sinner Podcast</span><span>Founder, The King's Foundation</span></div></div></div>
 
 <div class="pad">
 <!-- Flow: 1 branch -> 2 identity -> 3 unlocked. Captured in Netlify Forms ("contact-save") + Zapier. -->
@@ -259,7 +258,7 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 <div class="tiles" id="moves"></div>
 </div>
 </section>
-<a class="quiet rv" id="bookq" href="https://mrunstuck.com/start?utm_source=contact-card&utm_medium=quiet">Just want to talk? Book a call →</a>
+<a class="quiet" id="bookq" href="https://mrunstuck.com/start?utm_source=contact-card&utm_medium=quiet">Just want to talk? Book a call →</a>
 
 <section class="sec rv" id="story">
 <div class="eyebrow">The story</div>
@@ -468,7 +467,7 @@ function qrSvg(text,cell,margin){var G=qrMatrix(text),N=G.length,S=(N+2*margin)*
   // ---- reveal / cue / count-up / sticky bar ----
   var rv=[].slice.call(document.querySelectorAll('.rv')),cue=$('cue');
   function countUp(el){var end=+el.dataset.count,suf=el.dataset.suffix||'',t0=null;if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=end.toLocaleString()+suf;return}function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1100),e=1-Math.pow(1-k,3);el.textContent=Math.round(end*e).toLocaleString()+suf;if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px',threshold:.08});rv.forEach(function(el){io.observe(el)})}else{rv.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:.08});rv.forEach(function(el){io.observe(el)})}else{rv.forEach(function(el){el.classList.add('in')})}
   addEventListener('scroll',function(){cue.classList.toggle('off',scrollY>60)},{passive:true});
   var hero=document.querySelector('.hero');
   function syncBar(){var r=hero.getBoundingClientRect();$('bar').classList.toggle('show',r.bottom<60&&!(flow.classList.contains('on')&&cur<3)&&!scan.classList.contains('on'))}
