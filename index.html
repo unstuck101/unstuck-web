@@ -1,99 +1,144 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Travis Ala | MRUNSTUCK</title><meta name="description" content="Travis Ala — Founder of UNSTUCK. Marine veteran, men's coach, speaker, host of the Notorious Sinner Podcast.">
-<meta property="og:type" content="profile"><meta property="og:url" content="https://contact.mrunstuck.com/"><meta property="og:title" content="Travis Ala | @MRUNSTUCK"><meta property="og:description" content="Good to meet you. Tap to save my contact."><meta property="og:image" content="https://contact.mrunstuck.com/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MR. UNSTUCK logo"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Travis Ala | @MRUNSTUCK"><meta name="twitter:description" content="Good to meet you. Tap to save my contact."><meta name="twitter:image" content="https://contact.mrunstuck.com/og-image.jpg"><meta name="theme-color" content="#535a63"><link rel="icon" href="/unstuck-logo.png"><link rel="apple-touch-icon" href="/logo-square.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta property="og:type" content="profile"><meta property="og:url" content="https://contact.mrunstuck.com/"><meta property="og:title" content="Travis Ala | @MRUNSTUCK"><meta property="og:description" content="Good to meet you. Tap to save my contact."><meta property="og:image" content="https://contact.mrunstuck.com/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MR. UNSTUCK logo"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Travis Ala | @MRUNSTUCK"><meta name="twitter:description" content="Good to meet you. Tap to save my contact."><meta name="twitter:image" content="https://contact.mrunstuck.com/og-image.jpg"><meta name="theme-color" content="#0a0a0b"><link rel="icon" href="/unstuck-logo.png"><link rel="apple-touch-icon" href="/logo-square.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
 <style>
-:root{--g:#e8c35a;--g2:#f3d77a;--r:#ff6b5e;--bg:#454b53;--card:#353a41;--line:rgba(232,195,90,.35);--t:#fff;--m:#d3d7dc}
+/* Brand tokens, mirrored from mrunstuck.com */
+:root{--ink:#0a0a0b;--ink2:#121214;--ink3:#1a1a1d;--line:#2a2a2e;--bone:#f3efe8;--bone2:#cfc9bf;--mute:#8d8a85;--red:#e3122b;--red2:#ff2a43;--gold:#c9a24a;
+--display:"Anton",Impact,"Arial Narrow",sans-serif;--serif:"Playfair Display",Georgia,serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:linear-gradient(180deg,#535a63 0,#454b53 45%,#3b4047 100%);background-color:var(--bg);color:var(--t);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
-.w{max-width:460px;margin:0 auto;padding:18px 18px 110px}
-h1{font-family:Oswald,sans-serif;font-weight:700;font-size:34px;letter-spacing:2px;text-align:center;margin-top:4px;text-transform:uppercase}
-.h{text-align:center;color:var(--r);font-weight:700;letter-spacing:3px;font-size:13px;margin-top:2px}
-.ti{text-align:center;color:var(--m);font-size:14px;margin-top:6px;line-height:1.45}
-svg{width:22px;height:22px;fill:none;stroke:var(--g);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
-.shield{text-align:center;position:relative}.shield:before{content:'';position:absolute;left:50%;top:50%;width:170px;height:170px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.45) 0,rgba(212,175,55,.15) 45%,rgba(212,175,55,0) 70%)}
-.shield img{position:relative;width:104px;height:auto;filter:drop-shadow(0 12px 18px rgba(0,0,0,.55)) drop-shadow(0 0 16px rgba(232,195,90,.45))}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:12px;padding:16px;border-radius:12px;font-family:Oswald,sans-serif;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;font-size:19px;text-decoration:none;cursor:pointer;border:0}
-.btn.gold{background:linear-gradient(135deg,#f0cf68,#d4af37 50%,#b08a1f);color:#111;border:1px solid #9c7a16;box-shadow:0 8px 22px rgba(167,125,18,.4)}
-.btn.gold svg{stroke:#111}
-.btn.ghost{background:transparent;color:var(--g2);border:1px solid var(--g2);font-size:16px}
-.btn.ghost svg{stroke:var(--g2)}
-.btn.big{font-size:23px;padding:19px;margin-top:22px}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{background:var(--ink);color:var(--bone);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.5}
+a{color:inherit}
+.w{max-width:480px;margin:0 auto;padding:0 0 120px;position:relative}
+.pad{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
-/* Handshake */
-.shake{display:none;margin-top:12px;background:var(--card);border:1px solid var(--g2);border-left:4px solid var(--r);border-radius:14px;padding:18px}
-.shake.on{display:block;animation:in .25s ease}
+/* Top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:calc(12px + env(safe-area-inset-top,0px));padding-bottom:12px;position:relative;z-index:3}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:38px;height:auto}
+.brand b{font-family:var(--display);font-size:22px;letter-spacing:1px;text-transform:uppercase;font-weight:400}
+.brand b span{color:var(--red)}
+.scanbtn{display:inline-flex;align-items:center;gap:8px;padding:11px 14px;border:1px solid rgba(243,239,232,.25);background:rgba(10,10,11,.6);color:var(--bone);font:800 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:2px}
+.scanbtn svg.i{width:18px;height:18px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:22px}
+.hero .ph{position:absolute;inset:0;z-index:0;background:url(/travis-portrait.webp) center 18% / cover no-repeat;filter:saturate(.85)}
+.hero .ph:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.15) 0%,rgba(10,10,11,.55) 45%,var(--ink) 92%)}
+.hero > .pad{position:relative;z-index:1}
+.eyebrow{font:700 12px/1.3 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--red)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,15vw,68px);line-height:.95;letter-spacing:.5px;text-transform:uppercase;margin-top:10px;text-wrap:balance}
+.lede{font-family:var(--serif);font-style:italic;font-weight:500;font-size:28px;line-height:1.1;color:var(--red2);margin-top:6px}
+.sub{color:var(--bone2);font-size:16px;margin-top:12px;max-width:34ch}
+
+/* Buttons */
+.btn{display:flex;align-items:center;justify-content:center;gap:.6em;width:100%;padding:18px 20px;font:800 14px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:0;cursor:pointer;margin-top:12px;transition:transform .15s,background .15s}
+.btn.red{background:var(--red);color:#fff;box-shadow:0 10px 30px -10px rgba(227,18,43,.7)}
+.btn.red:hover{background:var(--red2);transform:translateY(-2px)}
+.btn.ghost{background:transparent;border:1px solid rgba(243,239,232,.25);color:var(--bone)}
+.btn svg.i{width:18px;height:18px}
+.btn.big{padding:21px 20px;font-size:15px;margin-top:18px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.row3 .btn{margin-top:0;padding:14px 8px;font-size:12px}
+.quiet{display:block;text-align:center;margin-top:16px;color:var(--bone2);font-size:15px;text-decoration:underline;text-underline-offset:4px}
+
+/* Panels (handshake + unlocked) */
+.panel{display:none;margin:14px 0 0;background:var(--ink2);border:1px solid var(--line);border-top:3px solid var(--red);padding:20px 18px 18px}
+.panel.on{display:block;animation:in .25s ease}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.shake h2{font-family:Oswald,sans-serif;font-size:22px;letter-spacing:1.5px;text-transform:uppercase}
-.shake .lead{color:var(--m);font-size:14.5px;line-height:1.5;margin:4px 0 14px}
-.f{display:block;margin-bottom:12px}
-.f span{display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g2);margin-bottom:6px}
-.f input[type=text],.f input[type=tel]{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:#2b2f35;color:#fff;font:500 17px Inter,sans-serif}
-.f input:focus-visible{outline:2px solid var(--g2);outline-offset:1px}
-.chips{display:flex;flex-direction:column;gap:8px;margin-bottom:6px}
+.meta{display:flex;justify-content:space-between;font:700 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+h2{font-family:var(--display);font-weight:400;font-size:34px;line-height:1;letter-spacing:.5px;text-transform:uppercase;text-wrap:balance}
+h2 em{font-family:var(--serif);font-style:italic;font-weight:500;text-transform:none;letter-spacing:0;color:var(--red2);font-size:.95em}
+.lead{color:var(--bone2);font-size:15.5px;margin:8px 0 16px}
+.f{display:block;margin-bottom:14px}
+.f span{display:block;font:700 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.f input{width:100%;padding:15px 14px;border-radius:2px;border:1px solid var(--line);background:var(--ink);color:var(--bone);font:500 17px var(--sans)}
+.f input:focus-visible{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+.chips{display:flex;flex-direction:column;gap:8px}
 .chip input{position:absolute;opacity:0;pointer-events:none}
-.chip label{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:#2b2f35;font-size:15px;font-weight:600;cursor:pointer}
-.chip label:before{content:'';width:18px;height:18px;border-radius:50%;border:2px solid var(--g);flex:none}
-.chip input:checked+label{border-color:var(--g2);background:linear-gradient(90deg,rgba(232,195,90,.2),#2b2f35)}
-.chip input:checked+label:before{background:var(--g);box-shadow:inset 0 0 0 3px #2b2f35}
-.chip input:focus-visible+label{outline:2px solid var(--g2);outline-offset:2px}
-.err{color:var(--r);font-size:14px;min-height:20px;margin-top:8px}
-.fine{color:var(--m);font-size:12.5px;margin-top:10px;line-height:1.45;text-align:center}
+.chip label{display:flex;align-items:center;gap:14px;padding:13px 14px;border:1px solid var(--line);background:var(--ink3);font-size:15.5px;font-weight:600;cursor:pointer;border-radius:2px;color:var(--bone)}
+.chip label .n{width:40px;height:40px;border-radius:50%;background:var(--ink);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:17px;color:var(--red);flex:none}
+.chip label .ar{margin-left:auto;color:var(--mute);font-size:18px}
+.chip input:checked+label{border-color:var(--red);background:#1d1113}
+.chip input:checked+label .n{background:var(--red);color:#fff;border-color:var(--red)}
+.chip input:checked+label .ar{color:var(--red2)}
+.chip input:focus-visible+label{outline:2px solid var(--red);outline-offset:2px}
+.err{color:var(--red2);font-size:14px;min-height:20px;margin-top:8px}
+.fine{color:var(--mute);font-size:12.5px;margin-top:12px;line-height:1.45;text-align:center}
 .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
-.quiet{display:block;text-align:center;margin-top:14px;color:var(--m);font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.row2 .btn{margin-top:0;padding:15px 10px;font-size:12.5px}
+#done p{color:var(--bone2);font-size:16px;margin-top:8px}
 
-/* Unlocked */
-.done{display:none;margin-top:12px;background:var(--card);border:1px solid var(--g2);border-left:4px solid var(--r);border-radius:14px;padding:18px}
-.done.on{display:block;animation:in .25s ease}
-.done h2{font-family:Oswald,sans-serif;font-size:24px;letter-spacing:1.5px;text-transform:uppercase}
-.done p{color:#eef0f2;font-size:15.5px;line-height:1.55;margin-top:6px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.row2 .btn{margin-top:0;font-size:16px;padding:13px}
+/* Sections */
+.sec{margin-top:36px}
+.sec h2{font-size:30px;margin-top:8px}
+.story{color:var(--bone2);font-size:16px;margin-top:12px;max-width:40ch}
+.story b{color:var(--bone)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:18px}
+.stats div{padding:14px 8px;text-align:center;border-right:1px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-family:var(--display);font-weight:400;font-size:28px;line-height:1;color:var(--bone)}
+.stats small{display:block;font:700 10px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.l{display:flex;align-items:center;gap:14px;padding:15px 16px;background:var(--ink2);border:1px solid var(--line);color:var(--bone);text-decoration:none;margin-top:8px;border-radius:2px}
+.l .n{width:40px;height:40px;border-radius:50%;background:var(--ink);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--red);flex:none}
+.l b{display:block;font-weight:700;font-size:15.5px}.l small{color:var(--mute);font-size:13px}
+.l .ar{margin-left:auto;color:var(--mute);font-size:18px}
+.pods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.pods a{display:flex;align-items:center;justify-content:center;padding:13px 4px;border:1px solid var(--line);background:var(--ink2);color:var(--bone2);text-decoration:none;font:700 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;border-radius:2px}
+.bd{display:flex;gap:10px;margin-top:10px}.bd a{flex:1;display:flex;justify-content:center;align-items:center;border:1px solid var(--line);background:var(--ink2);padding:6px;border-radius:2px}.bd img{height:40px;width:auto;max-width:100%;display:block}
+.so{display:flex;justify-content:center;gap:10px;margin-top:12px}.so a{width:50px;height:50px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;background:var(--ink2);color:var(--bone2);border-radius:2px}
+footer{text-align:center;margin-top:40px;padding-top:22px;border-top:1px solid var(--line)}
+footer .eyebrow{color:var(--mute)}
+footer b{display:block;font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:2px;text-transform:uppercase;margin-top:6px}
+footer b span{color:var(--red)}
 
-.cr{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:26px 0 4px}.cr span{border:1px solid var(--g2);color:var(--g2);background:rgba(0,0,0,.18);font-size:11px;font-weight:600;letter-spacing:1px;padding:5px 9px;border-radius:99px;text-transform:uppercase}
-.bio{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--r);border-radius:12px;padding:16px;font-size:15px;line-height:1.6;color:#eef0f2;margin:14px 0;box-shadow:0 4px 14px rgba(0,0,0,.25)}
-.sec{font-family:Oswald,sans-serif;color:var(--r);letter-spacing:3px;font-size:13px;margin:26px 0 10px;text-transform:uppercase}
-.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:9px}
-.q{display:flex;align-items:center;justify-content:center;padding:13px 4px;background:var(--card);border:1px solid var(--line);border-radius:12px;color:var(--t);text-decoration:none;font-size:13.5px;font-weight:600}
-.l{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;color:var(--t);text-decoration:none;margin-bottom:9px}.l b{display:block;font-weight:700;font-size:15px}.l small{color:var(--m);font-size:12.5px}.l .ar{margin-left:auto;color:var(--g);font-size:20px}
-.bd{display:flex;gap:10px;justify-content:center;margin-top:10px}.bd a{flex:1;display:flex;justify-content:center}.bd img{height:46px;width:auto;max-width:100%;display:block}
-.so{display:flex;justify-content:center;gap:12px;margin-top:6px}.so a{width:50px;height:50px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;background:var(--card)}
-footer{text-align:center;color:var(--m);font-size:11.5px;margin-top:26px;letter-spacing:2px;font-weight:600}
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(43,47,53,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s ease}
+/* Sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(10,10,11,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s ease}
 .bar.show{transform:none}
-.bar button{max-width:428px;margin:0 auto}
-.bar svg{stroke:#111}
+.bar .btn{max-width:448px;margin:0 auto}
 
 /* Scan mode */
-.scanbtn{position:absolute;top:14px;right:14px;z-index:5;display:flex;align-items:center;gap:7px;padding:9px 13px;border-radius:99px;border:1px solid var(--g2);background:rgba(43,47,53,.85);color:var(--g2);font:700 12px Inter,sans-serif;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(6px)}
-.scanbtn svg{width:18px;height:18px;stroke:var(--g2)}
-.w{position:relative}
-.scan{position:fixed;inset:0;z-index:40;background:rgba(27,30,34,.97);display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px 18px calc(24px + env(safe-area-inset-bottom));text-align:center;overflow:auto}
+.scan{position:fixed;inset:0;z-index:40;background:var(--ink);display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px 18px calc(24px + env(safe-area-inset-bottom,0px));text-align:center;overflow:auto}
 .scan.on{display:flex;animation:in .2s ease}
-.scan .nm{font-family:Oswald,sans-serif;font-size:26px;letter-spacing:2px;text-transform:uppercase;margin-top:6px}
-.scan .hint{color:var(--g2);font-weight:700;letter-spacing:2px;font-size:12px;text-transform:uppercase;margin:4px 0 16px}
-.tile{background:#fff;padding:8px;border-radius:18px;box-shadow:0 0 0 6px rgba(232,195,90,.35),0 18px 40px rgba(0,0,0,.5);width:min(78vw,300px);aspect-ratio:1}
+.scan .nm{font-family:var(--display);font-weight:400;font-size:38px;letter-spacing:1px;text-transform:uppercase;line-height:1;margin-top:8px}
+.scan .eyebrow{margin-top:6px}
+.tile{background:#fff;padding:18px;margin-top:18px;border:6px solid var(--red);width:min(78vw,310px);aspect-ratio:1}
 .tile svg{width:100%;height:100%;display:block;stroke:none;stroke-width:0;fill:#000}.tile svg rect{fill:#fff}.tile svg path{fill:#000;stroke:none}
-.scan .cap{color:#eef0f2;font-size:17px;font-weight:600;margin-top:18px;line-height:1.4}
-.scan .sub{color:var(--m);font-size:13.5px;margin-top:4px}
-.scan .acts{width:min(90vw,360px);margin-top:18px}
-.scan .acts .btn{font-size:16px;padding:14px}
-.xbtn{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.scan .cap{font-family:var(--serif);font-style:italic;color:var(--bone);font-size:22px;margin-top:18px;line-height:1.2}
+.scan .sub{color:var(--mute);font-size:14px;margin-top:4px;max-width:30ch}
+.scan .acts{width:min(90vw,380px);margin-top:12px}
+.xbtn{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;width:44px;height:44px;border:1px solid var(--line);background:var(--ink2);color:var(--bone);font-size:22px;line-height:1;cursor:pointer;border-radius:2px}
 body.lock{overflow:hidden}
 body.lock .bar{display:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></head><body><main class="w">
-<button class="scanbtn" id="scanbtn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="4" height="4"/><rect x="13" y="7" width="4" height="4"/><rect x="7" y="13" width="4" height="4"/><path d="M13 13h4v4"/></svg>Scan</button>
-<div class="shield"><img src="/mrunstuck-shield.png" alt="MR. UNSTUCK"></div>
-<h1>Travis Ala</h1><div class="h">@MRUNSTUCK</div>
-<div class="ti">Marine · Former SWAT · Founder of Unstuck</div>
 
-<button class="btn gold big" id="open" type="button" aria-controls="shake" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Contact</button>
+<header class="top pad">
+<a class="brand" href="https://mrunstuck.com"><img src="/mrunstuck-shield.png" alt=""><b>MR.<span>UNSTUCK</span></b></a>
+<button class="scanbtn" id="scanbtn" type="button" aria-haspopup="dialog"><svg class="i" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="4" height="4"/><rect x="13" y="7" width="4" height="4"/><rect x="7" y="13" width="4" height="4"/><path d="M13 13h4v4"/></svg>Scan</button>
+</header>
 
-<!-- Handshake: captured in Netlify Forms ("contact-save"), then the card unlocks -->
-<section class="shake" id="shake" aria-labelledby="sh">
-<h2 id="sh">Let's shake hands first</h2>
+<section class="hero">
+<div class="ph" aria-hidden="true"></div>
+<div class="pad">
+<div class="eyebrow">Marine · Former SWAT · Founder of Unstuck</div>
+<h1>Travis Ala</h1>
+<div class="lede">Good to meet you.</div>
+<p class="sub">Save my contact. Then tell me who you are so I can save yours.</p>
+<button class="btn red big" id="open" type="button" aria-controls="shake" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Contact →</button>
+<div class="row3"><a class="btn ghost" href="tel:+14699660310">Call</a><a class="btn ghost" href="sms:+14699660310">Text</a><a class="btn ghost" href="mailto:support@mrunstuck.com">Email</a></div>
+</div>
+</section>
+
+<div class="pad">
+<!-- Handshake: captured in Netlify Forms ("contact-save") + Zapier, then the card unlocks -->
+<section class="panel" id="shake" aria-labelledby="sh">
+<div class="meta"><span>Step 1 of 1 · 3 fields</span><span>No pitch</span></div>
+<h2 id="sh">Who am I <em>talking to?</em></h2>
 <p class="lead">Tell me who you are and I'll hand you my contact. It goes straight to me.</p>
 <form id="gate" name="contact-save" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
 <input type="hidden" name="form-name" value="contact-save">
@@ -103,58 +148,71 @@ body.lock .bar{display:none}
 <label class="f"><span>Mobile number</span><input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(555) 555-5555" required></label>
 <div class="f" style="margin-bottom:0"><span>What brings you here?</span>
 <div class="chips" role="radiogroup" aria-label="What brings you here">
-<div class="chip"><input type="radio" name="reason" id="r1" value="Looking for help" required><label for="r1">I'm looking for help</label></div>
-<div class="chip"><input type="radio" name="reason" id="r2" value="Speaking or business"><label for="r2">Speaking or business</label></div>
-<div class="chip"><input type="radio" name="reason" id="r3" value="Just connecting" checked><label for="r3">Just connecting</label></div>
+<div class="chip"><input type="radio" name="reason" id="r1" value="Looking for help" required><label for="r1"><span class="n">01</span>I'm looking for help<span class="ar">→</span></label></div>
+<div class="chip"><input type="radio" name="reason" id="r2" value="Speaking or business"><label for="r2"><span class="n">02</span>Speaking or business<span class="ar">→</span></label></div>
+<div class="chip"><input type="radio" name="reason" id="r3" value="Just connecting" checked><label for="r3"><span class="n">03</span>Just connecting<span class="ar">→</span></label></div>
 </div></div>
 <div class="err" id="err" role="alert"></div>
-<button class="btn gold" id="go" type="submit" style="margin-top:6px">Unlock My Contact</button>
+<button class="btn red" id="go" type="submit">Unlock My Contact →</button>
 <p class="fine">Only Travis sees this. No lists, no spam.</p>
 </form>
 </section>
 
-<section class="done" id="done" aria-live="polite">
+<section class="panel" id="done" aria-live="polite">
+<div class="meta"><span>Unlocked</span><span>Contact Card</span></div>
 <h2 id="hi">You're in</h2>
 <p id="next"></p>
-<button class="btn gold" id="save" type="button"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Travis's Contact</button>
+<button class="btn red" id="save" type="button"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Travis's Contact</button>
 <div class="row2"><a class="btn ghost" id="call" href="#">Call</a><a class="btn ghost" id="text" href="#">Text</a></div>
 <div id="extra"></div>
 </section>
-<a class="quiet" id="bookq" href="https://mrunstuck.com/start?utm_source=contact-card&utm_medium=quiet">Just want to talk? Book a call</a>
+<a class="quiet" id="bookq" href="https://mrunstuck.com/start?utm_source=contact-card&utm_medium=quiet">Just want to talk? Book a call ↓</a>
 
-<div class="cr"><span>U.S. Marine Veteran</span><span>Former SWAT</span><span>1,000+ Men Coached</span></div>
-<div class="bio">Marine veteran, former SWAT leader and undercover detective. Founder of <b style="color:var(--r)">UNSTUCK</b> and The King's Foundation. For the last decade I've pulled founders, fathers, Marines and pastors out of the same pit I climbed out of. Over 1,000 men. Mindset rewiring, legacy systems, Kingdom discipline.</div>
+<section class="sec">
+<div class="eyebrow">The story</div>
+<h2>Same pit. <em>Climbed out.</em></h2>
+<p class="story">Marine veteran, former SWAT leader and undercover detective. Founder of <b>UNSTUCK</b> and The King's Foundation. For the last decade I've pulled founders, fathers, Marines and pastors out of the same pit I climbed out of. Mindset rewiring, legacy systems, Kingdom discipline.</p>
+<div class="stats"><div><b>1,000+</b><small>Men coached</small></div><div><b>USMC</b><small>Marine veteran</small></div><div><b>SWAT</b><small>Former leader</small></div></div>
+</section>
 
-<div class="sec">Listen In</div>
-<a class="l" href="https://www.youtube.com/@notorioussinnerpodcast"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg><div><b>Notorious Sinner Podcast</b><small>Get to know me</small></div><span class="ar">›</span></a>
-<div class="row3"><a class="q" href="https://open.spotify.com/show/033L5UwJ7sPwb8VSR8O3yk">Spotify</a><a class="q" href="https://podcasts.apple.com/us/podcast/notorious-sinner-podcast/id6805041518">Apple</a><a class="q" href="https://www.youtube.com/@notorioussinnerpodcast">YouTube</a></div>
+<section class="sec">
+<div class="eyebrow">Listen in</div>
+<a class="l" href="https://www.youtube.com/@notorioussinnerpodcast"><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></span><div><b>Notorious Sinner Podcast</b><small>Get to know me first</small></div><span class="ar">→</span></a>
+<div class="pods"><a href="https://open.spotify.com/show/033L5UwJ7sPwb8VSR8O3yk">Spotify</a><a href="https://podcasts.apple.com/us/podcast/notorious-sinner-podcast/id6805041518">Apple</a><a href="https://www.youtube.com/@notorioussinnerpodcast">YouTube</a></div>
+</section>
 
-<div class="sec">Unstuck Brotherhood</div>
-<a class="l" href="https://joinunstuck.com"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/><circle cx="9" cy="7" r="4"/></svg><div><b>joinunstuck.com</b><small>Already a member? Get the app</small></div><span class="ar">›</span></a>
+<section class="sec">
+<div class="eyebrow">Unstuck Brotherhood</div>
+<a class="l" href="https://joinunstuck.com"><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/><circle cx="9" cy="7" r="4"/></svg></span><div><b>joinunstuck.com</b><small>Already a member? Get the app</small></div><span class="ar">→</span></a>
 <div class="bd"><a href="https://apps.apple.com/us/app/unstuck-brotherhood/id6754237033" aria-label="Download on the App Store"><img src="/badge-appstore.svg" alt="Download on the App Store"></a><a href="https://play.google.com/store/apps/details?id=com.unstuck.wl" aria-label="Get it on Google Play"><img src="/badge-googleplay.png" alt="Get it on Google Play"></a></div>
-<a class="l" style="margin-top:12px" href="https://mrunstuck.com"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg><div><b>MRUNSTUCK</b><small>mrunstuck.com</small></div><span class="ar">›</span></a>
+<a class="l" href="https://mrunstuck.com"><span class="n"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></span><div><b>MRUNSTUCK.COM</b><small>Talk to Travis</small></div><span class="ar">→</span></a>
+</section>
 
-<div class="sec" style="text-align:center">Follow</div>
+<section class="sec" style="text-align:center">
+<div class="eyebrow">Follow</div>
 <div class="so">
-<a href="https://www.instagram.com/mrunstuck/" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
-<a href="https://www.youtube.com/@notorioussinnerpodcast" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.5 6.4a2.8 2.8 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 2 2c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z"/><path d="m9.8 15.5 5.7-3.5-5.7-3.5z"/></svg></a>
-<a href="https://www.linkedin.com/in/travis-ala/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-<a href="https://www.facebook.com/travismasonala" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div>
-<footer>BUILDING WARRIORS</footer>
-</main>
+<a href="https://www.instagram.com/mrunstuck/" aria-label="Instagram"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+<a href="https://www.youtube.com/@notorioussinnerpodcast" aria-label="YouTube"><svg class="i" viewBox="0 0 24 24"><path d="M22.5 6.4a2.8 2.8 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 2 2c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z"/><path d="m9.8 15.5 5.7-3.5-5.7-3.5z"/></svg></a>
+<a href="https://www.linkedin.com/in/travis-ala/" aria-label="LinkedIn"><svg class="i" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+<a href="https://www.facebook.com/travismasonala" aria-label="Facebook"><svg class="i" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div>
+</section>
 
+<footer><div class="eyebrow">Mr. Unstuck</div><b>Building <span>warriors</span></b></footer>
+</div>
+</main>
 
 <div class="scan" id="scan" role="dialog" aria-modal="true" aria-labelledby="scannm">
 <button class="xbtn" id="scanx" type="button" aria-label="Close">×</button>
-<img src="/mrunstuck-shield.png" alt="" style="width:64px;height:auto;filter:drop-shadow(0 0 12px rgba(232,195,90,.45))">
+<img src="/mrunstuck-shield.png" alt="" style="width:64px;height:auto">
 <div class="nm" id="scannm">Travis Ala</div>
-<div class="hint">@MRUNSTUCK</div>
+<div class="eyebrow">Scan to save my contact</div>
 <div class="tile" id="tile" aria-label="QR code that opens this card"></div>
-<div class="cap">Point your camera here</div>
+<div class="cap">Point your camera here.</div>
 <div class="sub">Opens this card on your phone so you can save my number.</div>
-<div class="acts"><button class="btn gold" id="sharebtn" type="button"><svg viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13"/></svg>Text Them the Link</button><button class="btn ghost" id="copybtn" type="button">Copy Link</button></div>
+<div class="acts"><button class="btn red" id="sharebtn" type="button"><svg class="i" viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13"/></svg>Text Them the Link</button><button class="btn ghost" id="copybtn" type="button">Copy Link</button></div>
 </div>
-<div class="bar" id="bar"><button class="btn gold" id="barbtn" type="button" style="margin-top:0"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Contact</button></div>
+
+<div class="bar" id="bar"><button class="btn red" id="barbtn" type="button" style="margin-top:0"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Contact →</button></div>
 
 <script>
 (function(){
@@ -181,9 +239,9 @@ body.lock .bar{display:none}
     $('hi').textContent="You're in, "+first;
     var r=lead.reason,msg,extra='';
     if(r==='Looking for help'){msg="Glad you reached out. Save my contact, then pick a time and we'll talk about where you're stuck.";
-      extra='<a class="btn gold" style="margin-top:12px" href="https://mrunstuck.com/start?utm_source=contact-card&utm_medium=handshake">Book a Call</a>'}
+      extra='<a class="btn red" style="margin-top:12px" href="https://mrunstuck.com/start?utm_source=contact-card&utm_medium=handshake">Book a Call</a>'}
     else if(r==='Speaking or business'){msg="Save my contact, then send me the details and I'll get back to you.";
-      extra='<a class="btn gold" style="margin-top:12px" href="mailto:support@mrunstuck.com?subject='+encodeURIComponent('Speaking / partnership inquiry')+'&body='+encodeURIComponent('Name: '+lead.name+'\nOrganization:\nWhat you have in mind:\nDate / location (if an event):\n')+'">Email Travis</a>'}
+      extra='<a class="btn red" style="margin-top:12px" href="mailto:support@mrunstuck.com?subject='+encodeURIComponent('Speaking / partnership inquiry')+'&body='+encodeURIComponent('Name: '+lead.name+'\nOrganization:\nWhat you have in mind:\nDate / location (if an event):\n')+'">Email Travis</a>'}
     else{msg="Good to meet you. Save my contact, then text me so I have yours too.";}
     $('next').textContent=msg;$('extra').innerHTML=extra;
     var a=$('save');a.onclick=function(){var l=document.createElement('a');l.href=url;l.download='Travis-Ala.vcf';document.body.appendChild(l);l.click();l.remove()};
@@ -268,7 +326,7 @@ function qrSvg(text,cell,margin){var G=qrMatrix(text),N=G.length,S=(N+2*margin)*
 
   var SCAN_URL=location.origin+'/?src=scan';
   var scan=$('scan'),tile=$('tile');
-  function openScan(){ if(!tile.innerHTML){try{tile.innerHTML=qrSvg(SCAN_URL,1,3)}catch(e){tile.textContent=SCAN_URL}}
+  function openScan(){ if(!tile.innerHTML){try{tile.innerHTML=qrSvg(SCAN_URL,1,2)}catch(e){tile.textContent=SCAN_URL}}
     scan.classList.add('on');document.body.classList.add('lock');$('scanx').focus() }
   function closeScan(){scan.classList.remove('on');document.body.classList.remove('lock');$('scanbtn').focus()}
   $('scanbtn').addEventListener('click',openScan);$('scanx').addEventListener('click',closeScan);
@@ -283,9 +341,11 @@ function qrSvg(text,cell,margin){var G=qrMatrix(text),N=G.length,S=(N+2*margin)*
     (navigator.clipboard?navigator.clipboard.writeText(SCAN_URL):Promise.reject()).then(function(){b.textContent='Copied'},function(){window.prompt('Copy this link',SCAN_URL)});
     setTimeout(function(){b.textContent='Copy Link'},1800)});
 
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(e){$('bar').classList.toggle('show',!e[0].isIntersecting && !shake.classList.contains('on'))},{threshold:0}).observe(openBtn);
-  }
+  var hero=document.querySelector('.hero');
+  function syncBar(){var r=hero.getBoundingClientRect();$('bar').classList.toggle('show',r.bottom<60&&!shake.classList.contains('on')&&!scan.classList.contains('on'))}
+  addEventListener('scroll',syncBar,{passive:true});addEventListener('resize',syncBar);
+  var _mo=new MutationObserver(syncBar);_mo.observe(shake,{attributes:true,attributeFilter:['class']});_mo.observe(scan,{attributes:true,attributeFilter:['class']});
+  syncBar();
 })();
 </script>
 </body></html>
