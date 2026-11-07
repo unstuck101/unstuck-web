@@ -3,6 +3,12 @@
 Source for the Travis Ala digital business card (https://contact.mrunstuck.com/).
 Static site, no build step.
 
+## The flow
+Step 1: pick a branch (help / speaking-business / just connecting). Step 2: first name + mobile (auto-formatted).
+Step 3: unlocked card + "next moves" tiles tailored to the branch. Returning visitors (localStorage) land straight on step 3.
+`?for=help|biz|connect` preselects the branch. The "Everywhere Travis is" grid consolidates app, podcast, booking and socials;
+the app tile links straight to the App Store on iPhone and Google Play on Android.
+
 ## The handshake
 "Save Contact" doesn't download anything directly. It opens a short step: first name,
 mobile number, and what brings them here. On submit:

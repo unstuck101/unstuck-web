@@ -126,6 +126,7 @@ body.lock .bar{display:none}
 .hero .a{animation:up .7s cubic-bezier(.2,.7,.2,1) both}
 .hero .a1{animation-delay:.05s}.hero .a2{animation-delay:.18s}.hero .a3{animation-delay:.32s}.hero .a4{animation-delay:.44s}.hero .a5{animation-delay:.56s}.hero .a6{animation-delay:.68s}
 .btn.big{animation:up .7s .56s cubic-bezier(.2,.7,.2,1) both,glow 2.8s 1.4s ease-in-out infinite}
+.btn.big.unl{animation:glow 2.8s ease-in-out infinite}
 .cue{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:22px;color:var(--mute);font:700 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;transition:opacity .4s}
 .cue i{display:block;width:1px;height:34px;background:var(--line);position:relative;overflow:hidden}
 .cue i:after{content:'';position:absolute;left:0;top:0;width:1px;height:14px;background:var(--red2);animation:cue 1.6s ease-in-out infinite}
@@ -138,6 +139,39 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 .ck{width:16px;height:16px;stroke:var(--red2);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;vertical-align:-3px;margin-right:6px}
 .panel.on .ck{animation:draw .5s .2s ease-out forwards}
 .stats b{font-variant-numeric:tabular-nums}
+
+/* Flow */
+.flow{display:none;margin-top:14px;background:var(--ink2);border:1px solid var(--line);overflow:hidden}
+.flow.on{display:block;animation:in .25s ease}
+.prog{height:3px;background:var(--line);position:relative}.prog i{position:absolute;left:0;top:0;bottom:0;background:var(--red);width:33%;transition:width .45s cubic-bezier(.2,.7,.2,1)}
+.flow .in{padding:18px 18px 20px}
+.step{display:none}.step.on{display:block;animation:slide .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes slide{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+.step.back{animation-name:slideb}@keyframes slideb{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+.meta{display:flex;justify-content:space-between;font:700 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+.meta a,.meta button{all:unset;cursor:pointer;color:var(--bone2);text-decoration:underline;text-underline-offset:3px;font:inherit;letter-spacing:inherit}
+.br{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.brc{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:14px;padding:15px 14px;border:1px solid var(--line);background:var(--ink3);border-radius:2px;color:var(--bone);transition:border-color .15s,background .15s,transform .15s}
+.brc .n{width:44px;height:44px;border-radius:50%;background:var(--ink);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:18px;color:var(--red);flex:none}
+.brc b{display:block;font-size:16px;font-weight:700}.brc small{display:block;color:var(--mute);font-size:13px;margin-top:2px;line-height:1.35}
+.brc .ar{margin-left:auto;color:var(--mute);font-size:20px}
+.brc:hover,.brc:focus-visible{border-color:var(--red);outline:0}
+.brc:active{transform:scale(.985)}
+.brc[aria-pressed=true]{border-color:var(--red);background:#1d1113}.brc[aria-pressed=true] .n{background:var(--red);color:#fff;border-color:var(--red)}.brc[aria-pressed=true] .ar{color:var(--red2)}
+.pick{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;padding:7px 10px 7px 7px;border:1px solid var(--line);background:var(--ink3);border-radius:2px;font:700 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--bone2)}
+.pick .n{width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:12px}
+/* Next moves / ecosystem tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.tile2{display:flex;flex-direction:column;gap:10px;padding:14px 13px;width:100%;text-align:left;font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--ink3);color:var(--bone);text-decoration:none;border-radius:2px;min-height:112px;transition:border-color .15s,transform .15s}
+.tile2:hover{border-color:var(--red)}.tile2:active{transform:scale(.985)}
+.tile2 .ic{width:40px;height:40px;border-radius:50%;background:var(--ink);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--red2)}
+.tile2 b{display:block;font:800 12.5px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.tile2 small{display:block;color:var(--mute);font-size:12.5px;line-height:1.35;margin-top:3px}
+.tile2.hot{background:var(--red);border-color:var(--red);color:#fff}.tile2.hot .ic{background:rgba(0,0,0,.25);border-color:rgba(255,255,255,.25);color:#fff}.tile2.hot small{color:rgba(255,255,255,.8)}
+.tile2.wide{grid-column:1/-1;flex-direction:row;align-items:center;min-height:0}
+.tile2.wide .ic{flex:none}.tile2.wide .ar{margin-left:auto;color:var(--mute);font-size:20px}
+.badges{display:flex;gap:8px;margin-top:8px}.badges a{flex:1;display:flex;justify-content:center;align-items:center;border:1px solid var(--line);background:var(--ink);padding:6px;border-radius:2px}.badges img{height:36px;width:auto;max-width:100%;display:block}
+.hide{display:none!important}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}html.js .rv{opacity:1;transform:none}.cue{display:none}}
 
 </style></head><body><main class="w">
@@ -161,36 +195,48 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 </section>
 
 <div class="pad">
-<!-- Handshake: captured in Netlify Forms ("contact-save") + Zapier, then the card unlocks -->
-<section class="panel" id="shake" aria-labelledby="sh">
-<div class="meta"><span>Step 1 of 1 · 3 fields</span><span>No pitch</span></div>
-<h2 id="sh">Who am I <em>talking to?</em></h2>
-<p class="lead">Tell me who you are and I'll hand you my contact. It goes straight to me.</p>
+<!-- Flow: 1 branch -> 2 identity -> 3 unlocked. Captured in Netlify Forms ("contact-save") + Zapier. -->
+<section class="flow" id="flow" aria-live="polite">
+<div class="prog" aria-hidden="true"><i id="prog"></i></div>
 <form id="gate" name="contact-save" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
 <input type="hidden" name="form-name" value="contact-save">
 <input type="hidden" name="source" id="source" value="">
+<input type="hidden" name="reason" id="reason" value="">
 <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+<div class="in step on" id="s1" data-step="1">
+<div class="meta"><span>Step 1 of 2 · 1 tap</span><span>No pitch</span></div>
+<h2>What brings <em>you here?</em></h2>
+<p class="lead">Pick one. I'll point you the right way.</p>
+<div class="br" role="group" aria-label="What brings you here">
+<button class="brc" type="button" data-k="help" data-v="Looking for help" aria-pressed="false"><span class="n">01</span><span><b>I'm looking for help</b><small>Stuck, carrying it alone, or ready to get moving.</small></span><span class="ar">→</span></button>
+<button class="brc" type="button" data-k="biz" data-v="Speaking or business" aria-pressed="false"><span class="n">02</span><span><b>Speaking or business</b><small>Events, podcast, partnerships.</small></span><span class="ar">→</span></button>
+<button class="brc" type="button" data-k="connect" data-v="Just connecting" aria-pressed="false"><span class="n">03</span><span><b>Just connecting</b><small>We met. Let's stay in touch.</small></span><span class="ar">→</span></button>
+</div>
+</div>
+
+<div class="in step" id="s2" data-step="2">
+<div class="meta"><span>Step 2 of 2 · 2 fields</span><button type="button" id="back">← Change</button></div>
+<div class="pick" id="pick"><span class="n">01</span><span id="pickl"></span></div>
+<h2>Who am I <em>talking to?</em></h2>
+<p class="lead">Tell me who you are and I'll hand you my contact. It goes straight to me.</p>
 <label class="f"><span>First name</span><input type="text" id="name" name="name" autocomplete="given-name" autocapitalize="words" required></label>
-<label class="f"><span>Mobile number</span><input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(555) 555-5555" required></label>
-<div class="f" style="margin-bottom:0"><span>What brings you here?</span>
-<div class="chips" role="radiogroup" aria-label="What brings you here">
-<div class="chip"><input type="radio" name="reason" id="r1" value="Looking for help" required><label for="r1"><span class="n">01</span>I'm looking for help<span class="ar">→</span></label></div>
-<div class="chip"><input type="radio" name="reason" id="r2" value="Speaking or business"><label for="r2"><span class="n">02</span>Speaking or business<span class="ar">→</span></label></div>
-<div class="chip"><input type="radio" name="reason" id="r3" value="Just connecting" checked><label for="r3"><span class="n">03</span>Just connecting<span class="ar">→</span></label></div>
-</div></div>
+<label class="f"><span>Mobile number</span><input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(555) 555-5555" maxlength="14" required></label>
 <div class="err" id="err" role="alert"></div>
 <button class="btn red" id="go" type="submit">Unlock My Contact →</button>
 <p class="fine">Only Travis sees this. No lists, no spam.</p>
+</div>
 </form>
-</section>
 
-<section class="panel" id="done" aria-live="polite">
+<div class="in step" id="s3" data-step="3">
 <div class="meta"><span><svg class="ck" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 7"/></svg>Unlocked</span><span>Contact Card</span></div>
 <h2 id="hi">You're in</h2>
-<p id="next"></p>
+<p class="lead" id="next"></p>
 <a class="btn red" id="save" href="/card/travis-ala-mrunstuck.vcf" download="Travis-Ala.vcf"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Travis's Contact</a>
-<div class="row2"><a class="btn ghost" id="call" href="#">Call</a><a class="btn ghost" id="text" href="#">Text</a></div>
-<div id="extra"></div>
+<div class="row2"><a class="btn ghost" id="call" href="tel:+14699660310">Call</a><a class="btn ghost" id="text" href="sms:+14699660310">Text</a></div>
+<div class="eyebrow" style="margin-top:22px">Your next moves</div>
+<div class="tiles" id="moves"></div>
+</div>
 </section>
 <a class="quiet rv" id="bookq" href="https://mrunstuck.com/start?utm_source=contact-card&utm_medium=quiet">Just want to talk? Book a call →</a>
 
@@ -201,26 +247,11 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 <div class="stats rv d1"><div><b data-count="1000" data-suffix="+">1,000+</b><small>Men coached</small></div><div><b>USMC</b><small>Marine veteran</small></div><div><b>SWAT</b><small>Former leader</small></div></div>
 </section>
 
-<section class="sec rv">
-<div class="eyebrow">Listen in</div>
-<a class="l" href="https://www.youtube.com/@notorioussinnerpodcast"><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></span><div><b>Notorious Sinner Podcast</b><small>Get to know me first</small></div><span class="ar">→</span></a>
-<div class="pods"><a href="https://open.spotify.com/show/033L5UwJ7sPwb8VSR8O3yk">Spotify</a><a href="https://podcasts.apple.com/us/podcast/notorious-sinner-podcast/id6805041518">Apple</a><a href="https://www.youtube.com/@notorioussinnerpodcast">YouTube</a></div>
-</section>
-
-<section class="sec rv">
-<div class="eyebrow">Unstuck Brotherhood</div>
-<a class="l" href="https://joinunstuck.com"><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/><circle cx="9" cy="7" r="4"/></svg></span><div><b>joinunstuck.com</b><small>Already a member? Get the app</small></div><span class="ar">→</span></a>
-<div class="bd"><a href="https://apps.apple.com/us/app/unstuck-brotherhood/id6754237033" aria-label="Download on the App Store"><img src="/badge-appstore.svg" alt="Download on the App Store"></a><a href="https://play.google.com/store/apps/details?id=com.unstuck.wl" aria-label="Get it on Google Play"><img src="/badge-googleplay.png" alt="Get it on Google Play"></a></div>
-<a class="l" href="https://mrunstuck.com"><span class="n"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></span><div><b>MRUNSTUCK.COM</b><small>Talk to Travis</small></div><span class="ar">→</span></a>
-</section>
-
-<section class="sec rv" style="text-align:center">
-<div class="eyebrow">Follow</div>
-<div class="so">
-<a href="https://www.instagram.com/mrunstuck/" aria-label="Instagram"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
-<a href="https://www.youtube.com/@notorioussinnerpodcast" aria-label="YouTube"><svg class="i" viewBox="0 0 24 24"><path d="M22.5 6.4a2.8 2.8 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 2 2c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z"/><path d="m9.8 15.5 5.7-3.5-5.7-3.5z"/></svg></a>
-<a href="https://www.linkedin.com/in/travis-ala/" aria-label="LinkedIn"><svg class="i" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-<a href="https://www.facebook.com/travismasonala" aria-label="Facebook"><svg class="i" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div>
+<section class="sec rv" id="eco">
+<div class="eyebrow">Everywhere Travis is</div>
+<h2>One tap <em>from here.</em></h2>
+<div class="tiles" id="ecotiles"></div>
+<div class="badges hide" id="badges"><a href="https://apps.apple.com/us/app/unstuck-brotherhood/id6754237033" aria-label="Download on the App Store"><img src="/badge-appstore.svg" alt="Download on the App Store"></a><a href="https://play.google.com/store/apps/details?id=com.unstuck.wl" aria-label="Get it on Google Play"><img src="/badge-googleplay.png" alt="Get it on Google Play"></a></div>
 </section>
 
 <footer class="rv"><div class="eyebrow">Mr. Unstuck</div><b>Building <span>warriors</span></b></footer>
@@ -242,55 +273,97 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 
 <script>
 (function(){
-  // Card is embedded (not a public file) and only offered after the handshake.
+  document.documentElement.classList.add('js');
   var HOOK='https://hooks.zapier.com/hooks/catch/27472916/CGpyQInU9S2DRC6RC/';
+  var NUM='+14699660310', VCF='/card/travis-ala-mrunstuck.vcf';
   var $=function(i){return document.getElementById(i)};
-  var shake=$('shake'),done=$('done'),openBtn=$('open'),unlocked=false,url=null,lead={};
-  function showShake(){shake.classList.add('on');openBtn.setAttribute('aria-expanded','true');
-    try{shake.scrollIntoView({behavior:'smooth',block:'center'})}catch(e){} setTimeout(function(){$('name').focus({preventScroll:true})},350)}
-  openBtn.addEventListener('click',function(){ if(unlocked){done.scrollIntoView({behavior:'smooth',block:'center'})} else showShake() });
-  $('barbtn').addEventListener('click',function(){ if(unlocked){$('save').click()} else {window.scrollTo({top:0,behavior:'smooth'});showShake()} });
-
+  var flow=$('flow'),openBtn=$('open'),prog=$('prog'),unlocked=false,lead={},branch=null;
   var qs=new URLSearchParams(location.search);
   $('source').value=(qs.get('src')||qs.get('for')||'').slice(0,60);
 
-  function digits(s){return (s||'').replace(/\D/g,'')}
-  var NUM='+14699660310';
-  function unlock(){
-    var first=lead.name.split(/\s+/)[0];
-    $('hi').textContent="You're in, "+first;
-    var r=lead.reason,msg,extra='';
-    if(r==='Looking for help'){msg="Glad you reached out. Save my contact, then pick a time and we'll talk about where you're stuck.";
-      extra='<a class="btn red" href="https://mrunstuck.com/start?utm_source=contact-card&utm_medium=handshake">Book a Call →</a>'}
-    else if(r==='Speaking or business'){msg="Save my contact, then send me the details and I'll get back to you.";
-      extra='<a class="btn red" href="mailto:support@mrunstuck.com?subject='+encodeURIComponent('Speaking / partnership inquiry')+'&body='+encodeURIComponent('Name: '+lead.name+'\nOrganization:\nWhat you have in mind:\nDate / location (if an event):\n')+'">Email Travis →</a>'}
-    else{msg="Good to meet you. Save my contact, then text me so I have yours too.";}
-    $('next').textContent=msg;$('extra').innerHTML=extra;
-    $('call').href='tel:'+NUM;
-    $('text').href='sms:'+NUM+'?&body='+encodeURIComponent("Hey Travis, it's "+first+". ");
-    unlocked=true;shake.classList.remove('on');done.classList.add('on');openBtn.style.display='none';$('bookq').style.display='none';
-    try{done.scrollIntoView({behavior:'smooth',block:'start'})}catch(e){}
-  }
+  // ---- platform-aware links ----
+  var ua=navigator.userAgent||'',isIOS=/iPhone|iPad|iPod/.test(ua),isAndroid=/Android/.test(ua);
+  var APP_IOS='https://apps.apple.com/us/app/unstuck-brotherhood/id6754237033',APP_AND='https://play.google.com/store/apps/details?id=com.unstuck.wl';
+  var APP=isIOS?APP_IOS:isAndroid?APP_AND:null;
+  var I={
+    cal:'<svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>',
+    app:'<svg class="i" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>',
+    mic:'<svg class="i" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>',
+    mail:'<svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>',
+    msg:'<svg class="i" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+    ppl:'<svg class="i" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/><circle cx="9" cy="7" r="4"/></svg>',
+    ig:'<svg class="i" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>',
+    yt:'<svg class="i" viewBox="0 0 24 24"><path d="M22.5 6.4a2.8 2.8 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 2 2c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z"/><path d="m9.8 15.5 5.7-3.5-5.7-3.5z"/></svg>',
+    li:'<svg class="i" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>',
+    globe:'<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg>',
+    fb:'<svg class="i" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>'
+  };
+  function tile(o){var cls='tile2'+(o.hot?' hot':'')+(o.wide?' wide':'');var inner='<span class="ic">'+I[o.ic]+'</span><span><b>'+o.t+'</b>'+(o.d?'<small>'+o.d+'</small>':'')+'</span>'+(o.wide?'<span class="ar">→</span>':'');
+    return o.href?'<a class="'+cls+'" href="'+o.href+'"'+(o.href.charAt(0)==='h'?' target="_blank" rel="noopener"':'')+'>'+inner+'</a>':'<button type="button" class="'+cls+'" data-act="'+o.act+'">'+inner+'</button>'}
+  function appTile(hot,wide){return APP?tile({ic:'app',t:'Get the app',d:isIOS?'App Store · Brotherhood':'Google Play · Brotherhood',href:APP,hot:hot,wide:wide}):tile({ic:'app',t:'Get the app',d:'iPhone or Android',act:'badges',hot:hot,wide:wide})}
+  var BOOK='https://mrunstuck.com/start?utm_source=contact-card&utm_medium=';
+  function moves(k,first){
+    var t=[];
+    if(k==='help'){t.push(tile({ic:'cal',t:'Book a call',d:'Pick a time. We talk.',href:BOOK+'handshake',hot:1}));t.push(appTile());t.push(tile({ic:'mic',t:'Podcast',d:'Notorious Sinner',href:'https://www.youtube.com/@notorioussinnerpodcast'}));t.push(tile({ic:'ppl',t:'Brotherhood',d:'joinunstuck.com',href:'https://joinunstuck.com'}))}
+    else if(k==='biz'){t.push(tile({ic:'mail',t:'Email Travis',d:'Speaking · partnerships',href:'mailto:support@mrunstuck.com?subject='+encodeURIComponent('Speaking / partnership inquiry')+'&body='+encodeURIComponent('Name: '+first+'\nOrganization:\nWhat you have in mind:\nDate / location (if an event):\n'),hot:1}));t.push(tile({ic:'li',t:'LinkedIn',d:'travis-ala',href:'https://www.linkedin.com/in/travis-ala/'}));t.push(tile({ic:'mic',t:'Podcast',d:'Notorious Sinner',href:'https://www.youtube.com/@notorioussinnerpodcast'}));t.push(tile({ic:'globe',t:'mrunstuck.com',d:'The full story',href:'https://mrunstuck.com'}))}
+    else{t.push(tile({ic:'msg',t:'Text Travis',d:'So I have your number too',href:'sms:'+NUM+'?&body='+encodeURIComponent("Hey Travis, it's "+first+". Good meeting you."),hot:1}));t.push(tile({ic:'ig',t:'Instagram',d:'@mrunstuck',href:'https://www.instagram.com/mrunstuck/'}));t.push(tile({ic:'mic',t:'Podcast',d:'Notorious Sinner',href:'https://www.youtube.com/@notorioussinnerpodcast'}));t.push(appTile())}
+    return t.join('')}
+  // ecosystem grid (consolidates app badges, podcast, brotherhood, socials)
+  $('ecotiles').innerHTML=[appTile(1),tile({ic:'cal',t:'Book a call',d:'mrunstuck.com/start',href:BOOK+'eco'}),tile({ic:'mic',t:'Podcast',d:'YouTube · Spotify · Apple',act:'pods'}),tile({ic:'ppl',t:'Brotherhood',d:'joinunstuck.com',href:'https://joinunstuck.com'}),tile({ic:'ig',t:'Instagram',d:'@mrunstuck',href:'https://www.instagram.com/mrunstuck/'}),tile({ic:'yt',t:'YouTube',d:'@notorioussinnerpodcast',href:'https://www.youtube.com/@notorioussinnerpodcast'}),tile({ic:'li',t:'LinkedIn',d:'travis-ala',href:'https://www.linkedin.com/in/travis-ala/'}),tile({ic:'fb',t:'Facebook',d:'travismasonala',href:'https://www.facebook.com/travismasonala'}),tile({ic:'globe',t:'mrunstuck.com',d:'Talk to Travis',href:'https://mrunstuck.com',wide:1})].join('');
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-act]');if(!b)return;
+    if(b.dataset.act==='badges'){$('badges').classList.remove('hide');$('badges').scrollIntoView({behavior:'smooth',block:'center'})}
+    if(b.dataset.act==='pods'){b.outerHTML='<a class="tile2" href="https://open.spotify.com/show/033L5UwJ7sPwb8VSR8O3yk" target="_blank" rel="noopener"><span class="ic">'+I.mic+'</span><span><b>Spotify</b><small>Notorious Sinner</small></span></a><a class="tile2" href="https://podcasts.apple.com/us/podcast/notorious-sinner-podcast/id6805041518" target="_blank" rel="noopener"><span class="ic">'+I.mic+'</span><span><b>Apple Podcasts</b><small>Notorious Sinner</small></span></a>'}
+  });
 
+  // ---- steps ----
+  var steps=[null,$('s1'),$('s2'),$('s3')],cur=1;
+  function go(n,back){steps[cur].classList.remove('on','back');cur=n;var el=steps[n];el.classList.add('on');if(back)el.classList.add('back');prog.style.width=(n===3?100:n*50)+'%';
+    try{flow.scrollIntoView({behavior:'smooth',block:'start'})}catch(e){}}
+  function openFlow(){flow.classList.add('on');openBtn.setAttribute('aria-expanded','true');go(unlocked?3:(branch?2:1));
+    if(cur===2)setTimeout(function(){$('name').focus({preventScroll:true})},380)}
+  openBtn.addEventListener('click',openFlow);
+  $('barbtn').addEventListener('click',function(){ if(unlocked){location.href=VCF}else{window.scrollTo({top:0,behavior:'smooth'});openFlow()} });
+  document.querySelectorAll('.brc').forEach(function(b){b.addEventListener('click',function(){
+    branch=b.dataset.k;$('reason').value=b.dataset.v;
+    document.querySelectorAll('.brc').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    $('pick').querySelector('.n').textContent=b.querySelector('.n').textContent;$('pickl').textContent=b.dataset.v;
+    go(2);setTimeout(function(){$('name').focus({preventScroll:true})},380)})});
+  $('back').addEventListener('click',function(){go(1,true)});
+  // phone auto-format (US)
+  $('phone').addEventListener('input',function(){var d=this.value.replace(/\D/g,'').replace(/^1(?=\d{10})/,'').slice(0,10),o=d;
+    if(d.length>6)o='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);else if(d.length>3)o='('+d.slice(0,3)+') '+d.slice(3);else if(d.length>0)o='('+d;this.value=o});
+
+  function unlock(first,k){
+    $('hi').textContent=(lead.back?"Welcome back, ":"You're in, ")+first;
+    $('next').textContent=k==='help'?"Glad you reached out. Save my contact, then pick a time and we'll talk about where you're stuck."
+      :k==='biz'?"Save my contact, then send me the details and I'll get back to you.":"Good to meet you. Save my contact, then text me so I have yours too.";
+    $('text').href='sms:'+NUM+'?&body='+encodeURIComponent("Hey Travis, it's "+first+". ");
+    $('moves').innerHTML=moves(k,first);
+    unlocked=true;openBtn.classList.add('unl');openBtn.innerHTML='<svg class="i" viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Save Travis\'s Contact';
+    openBtn.onclick=function(){location.href=VCF};
+    $('barbtn').lastChild.textContent="Save Travis's Contact";$('bookq').style.display='none';
+  }
   $('gate').addEventListener('submit',function(e){
     e.preventDefault();
     var f=e.target,name=f.name.value.trim(),phone=f.phone.value,err=$('err');err.textContent='';
-    if(f['bot-field'].value){return}                      // bot: do nothing
+    if(f['bot-field'].value){return}
+    if(!branch){go(1,true);return}
     if(name.length<2){err.textContent='Add your first name.';f.name.focus();return}
-    if(digits(phone).length<10){err.textContent='Add a mobile number I can text.';f.phone.focus();return}
-    var reason=(f.querySelector('input[name=reason]:checked')||{}).value||'Just connecting';
-    lead={name:name,phone:phone,reason:reason};
+    if(phone.replace(/\D/g,'').length<10){err.textContent='Add a mobile number I can text.';f.phone.focus();return}
+    var first=name.split(/\s+/)[0];lead={name:name,phone:phone,reason:$('reason').value};
     var btn=$('go');btn.disabled=true;btn.textContent='One sec…';
     var body=new URLSearchParams(new FormData(f)).toString();
-    // 1) Netlify Forms keeps a backup copy.  2) Zapier webhook files the lead into GoHighLevel.
     var saved=fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(){});
     var crm=fetch(HOOK,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body,keepalive:true}).catch(function(){});
-    Promise.all([saved,crm]).then(function(){btn.disabled=false;btn.textContent='Unlock My Contact';unlock()});
+    Promise.all([saved,crm]).then(function(){btn.disabled=false;btn.textContent='Unlock My Contact →';
+      try{localStorage.setItem('cc',JSON.stringify({f:first,k:branch,t:Date.now()}))}catch(x){}
+      unlock(first,branch);go(3)});
   });
+  // returning visitor: straight to their unlocked card
+  try{var m=JSON.parse(localStorage.getItem('cc')||'null');if(m&&m.f&&m.k){branch=m.k;lead={back:true};unlock(m.f,m.k);lead={}}}catch(x){}
+  var f0=(qs.get('for')||'').toLowerCase();if(!unlocked&&(f0==='help'||f0==='biz'||f0==='connect')){var bb=document.querySelector('.brc[data-k='+f0+']');if(bb){flow.classList.add('on');bb.click()}}
 
-
-  // ---- Scan mode: hand the card to the OTHER person's phone ----
-// Minimal QR encoder: byte mode, EC level M, versions 1-6 (up to 108 bytes). Returns 2-D boolean matrix.
+  // ---- Scan mode ----
 function qrMatrix(text){
   var bytes=[];for(var i=0;i<text.length;i++){var c=text.charCodeAt(i);if(c>127)throw new Error('ascii only');bytes.push(c)}
   var CAP=[16,28,44,32*2,43*2,27*4], TOTAL=[26,44,70,100,134,172], ECW=[10,16,26,18,24,16], BLK=[1,1,1,2,2,4];
@@ -345,35 +418,26 @@ function qrMatrix(text){
 function qrSvg(text,cell,margin){var G=qrMatrix(text),N=G.length,S=(N+2*margin)*cell,d='';for(var r=0;r<N;r++)for(var c=0;c<N;c++)if(G[r][c])d+='M'+((c+margin)*cell)+' '+((r+margin)*cell)+'h'+cell+'v'+cell+'h-'+cell+'z';return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+S+' '+S+'" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="#fff"/><path d="'+d+'" fill="#000"/></svg>'}
 
   var SCAN_URL=location.origin+'/?src=scan';
-  var scan=$('scan'),tile=$('tile');
-  function openScan(){ if(!tile.innerHTML){try{tile.innerHTML=qrSvg(SCAN_URL,1,2)}catch(e){tile.textContent=SCAN_URL}}
+  var scan=$('scan'),tile_=$('tile');
+  function openScan(){ if(!tile_.innerHTML){try{tile_.innerHTML=qrSvg(SCAN_URL,1,2)}catch(e){tile_.textContent=SCAN_URL}}
     scan.classList.add('on');document.body.classList.add('lock');$('scanx').focus() }
   function closeScan(){scan.classList.remove('on');document.body.classList.remove('lock');$('scanbtn').focus()}
   $('scanbtn').addEventListener('click',openScan);$('scanx').addEventListener('click',closeScan);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&scan.classList.contains('on'))closeScan()});
   if(qs.get('scan')==='1')openScan();
-  $('sharebtn').addEventListener('click',function(){
-    var msg="Good meeting you. Here's my contact: "+SCAN_URL;
-    if(navigator.share){navigator.share({title:'Travis Ala',text:msg,url:SCAN_URL}).catch(function(){})}
-    else{location.href='sms:?&body='+encodeURIComponent(msg)}
-  });
-  $('copybtn').addEventListener('click',function(){var b=this;
-    (navigator.clipboard?navigator.clipboard.writeText(SCAN_URL):Promise.reject()).then(function(){b.textContent='Copied'},function(){window.prompt('Copy this link',SCAN_URL)});
-    setTimeout(function(){b.textContent='Copy Link'},1800)});
+  $('sharebtn').addEventListener('click',function(){var msg="Good meeting you. Here's my contact: "+SCAN_URL;
+    if(navigator.share){navigator.share({title:'Travis Ala',text:msg,url:SCAN_URL}).catch(function(){})}else{location.href='sms:?&body='+encodeURIComponent(msg)}});
+  $('copybtn').addEventListener('click',function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(SCAN_URL):Promise.reject()).then(function(){b.textContent='Copied'},function(){window.prompt('Copy this link',SCAN_URL)});setTimeout(function(){b.textContent='Copy Link'},1800)});
 
-  // Reveal on scroll + scroll cue + stat count-up
+  // ---- reveal / cue / count-up / sticky bar ----
   var rv=[].slice.call(document.querySelectorAll('.rv')),cue=$('cue');
   function countUp(el){var end=+el.dataset.count,suf=el.dataset.suffix||'',t0=null;if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=end.toLocaleString()+suf;return}function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1100),e=1-Math.pow(1-k,3);el.textContent=Math.round(end*e).toLocaleString()+suf;if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px',threshold:.08});
-    rv.forEach(function(el){io.observe(el)});
-  }else{rv.forEach(function(el){el.classList.add('in')})}
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('[data-count]').forEach(function(el){el.textContent=(+el.dataset.count).toLocaleString()+(el.dataset.suffix||'')});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px',threshold:.08});rv.forEach(function(el){io.observe(el)})}else{rv.forEach(function(el){el.classList.add('in')})}
   addEventListener('scroll',function(){cue.classList.toggle('off',scrollY>60)},{passive:true});
   var hero=document.querySelector('.hero');
-  function syncBar(){var r=hero.getBoundingClientRect();$('bar').classList.toggle('show',r.bottom<60&&!shake.classList.contains('on')&&!scan.classList.contains('on'))}
+  function syncBar(){var r=hero.getBoundingClientRect();$('bar').classList.toggle('show',r.bottom<60&&!(flow.classList.contains('on')&&cur<3)&&!scan.classList.contains('on'))}
   addEventListener('scroll',syncBar,{passive:true});addEventListener('resize',syncBar);
-  var _mo=new MutationObserver(syncBar);_mo.observe(shake,{attributes:true,attributeFilter:['class']});_mo.observe(scan,{attributes:true,attributeFilter:['class']});
+  var _mo=new MutationObserver(syncBar);[flow,scan,$('s1'),$('s2'),$('s3')].forEach(function(el){_mo.observe(el,{attributes:true,attributeFilter:['class']})});
   syncBar();
 })();
 </script>
