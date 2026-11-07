@@ -16,10 +16,12 @@ mobile number, and what brings them here. On submit:
    (Looking for help -> Book a Call, Speaking or business -> prefilled email, Just connecting -> text prefilled with their name).
 
 Only the Unstuck work cell is on the card. No personal number is stored anywhere in this repo.
-The vCard is embedded in `index.html` (base64), not served as a public file, so there is no link to share around the gate.
+The vCard is served from an unlisted path (`/card/travis-ala-mrunstuck.vcf`, noindex + no-store via `_headers`, disallowed in `robots.txt`)
+so iPhones open the native "New Contact" sheet instead of saving a blob to Files. The work cell is already public on the card (Call/Text),
+so the handshake gates the *saveable card and the lead capture*, not the number.
 Spam: a hidden honeypot field drops bots. Add `?src=church` (any label) to a link to see where leads came from.
 
-To change the card, regenerate the base64 vCard and replace the `CARD` string in `index.html`.
+To change the card, replace `card/travis-ala-mrunstuck.vcf`.
 
 Note: the gate is a handshake, not a lock. Someone who reads the page source could decode the work-cell card.
 That's by design for a business line. Never put a personal number in here.
