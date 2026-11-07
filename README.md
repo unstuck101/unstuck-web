@@ -9,7 +9,9 @@ mobile number, and what brings them here. On submit:
 1. The entry is sent to **Netlify Forms** (form name `contact-save`, backup copy) and to a **Zapier webhook**
    (workflow "Contact card lead to GHL"), which creates a GoHighLevel contact + opportunity in the
    **Contact Card** pipeline (tags: `contact-card`, `cc-help` / `cc-business` / `cc-connecting`, `src-<label>`).
-   Accounts written to are listed in the `ACCOUNTS` array of that workflow (currently Unstuck LLC).
+   Leads go to ONE GoHighLevel account on purpose: **MRUNSTUCK.COM** (never duplicated across accounts).
+   Other brands get their own workflow + their own Zapier connection.
+   Status: the Zapier workflow is OFF until the MRUNSTUCK.COM LeadConnector connection is added in Zapier.
 2. The contact card unlocks, and the next step adapts to the reason they chose
    (Looking for help -> Book a Call, Speaking or business -> prefilled email, Just connecting -> text prefilled with their name).
 
