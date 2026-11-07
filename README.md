@@ -34,3 +34,6 @@ That's by design for a business line. Never put a personal number in here.
 
 ## Scan mode
 The "Scan" button (top right) shows a full-screen QR code of this page with `?src=scan`, so the handshake happens on the OTHER person's phone when Travis is showing his own screen. "Text Them the Link" uses the phone's share sheet. The QR is generated in-page (no external library). Leads from it carry the `src-scan` tag.
+
+## Headshot
+The hero uses `travis-cutout.webp` (transparent cutout) over a red radial glow. To swap it, replace that file (keep it ~1400px wide with alpha) and re-render `og-image.jpg` (1200x630) so link previews match.
