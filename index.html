@@ -1,7 +1,8 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Travis Ala | MRUNSTUCK</title><meta name="description" content="Travis Ala — Founder of UNSTUCK. Marine veteran, men's coach, speaker, host of the Notorious Sinner Podcast.">
-<meta property="og:type" content="profile"><meta property="og:url" content="https://contact.mrunstuck.com/"><meta property="og:title" content="Travis Ala | @MRUNSTUCK"><meta property="og:description" content="Good to meet you. Tap to save my contact."><meta property="og:image" content="https://contact.mrunstuck.com/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MR. UNSTUCK logo"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Travis Ala | @MRUNSTUCK"><meta name="twitter:description" content="Good to meet you. Tap to save my contact."><meta name="twitter:image" content="https://contact.mrunstuck.com/og-image.jpg"><meta name="theme-color" content="#0a0a0b"><link rel="icon" href="/unstuck-logo.png"><link rel="apple-touch-icon" href="/logo-square.jpg">
+<meta property="og:type" content="profile"><meta property="og:url" content="https://contact.mrunstuck.com/"><meta property="og:title" content="Travis Ala | @MRUNSTUCK"><meta property="og:description" content="Marine veteran, former SWAT, founder of UNSTUCK. Tap to save my contact and tell me who you are."><meta property="og:image" content="https://contact.mrunstuck.com/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Travis Ala — Good to meet you. Tap to save my contact."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Travis Ala | @MRUNSTUCK"><meta name="twitter:description" content="Marine veteran, former SWAT, founder of UNSTUCK. Tap to save my contact and tell me who you are."><meta name="twitter:image" content="https://contact.mrunstuck.com/og-image.jpg"><meta name="theme-color" content="#0a0a0b"><link rel="icon" href="/unstuck-logo.png"><link rel="apple-touch-icon" href="/logo-square.jpg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/travis-portrait.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
 <style>
 /* Brand tokens, mirrored from mrunstuck.com */
@@ -172,7 +173,26 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 .tile2.wide .ic{flex:none}.tile2.wide .ar{margin-left:auto;color:var(--mute);font-size:20px}
 .badges{display:flex;gap:8px;margin-top:8px}.badges a{flex:1;display:flex;justify-content:center;align-items:center;border:1px solid var(--line);background:var(--ink);padding:6px;border-radius:2px}.badges img{height:36px;width:auto;max-width:100%;display:block}
 .hide{display:none!important}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}html.js .rv{opacity:1;transform:none}.cue{display:none}}
+
+/* Proof ticker */
+.tick{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink2);margin-top:4px}
+.tick .tr{display:flex;width:max-content;animation:tick 32s linear infinite}
+.tick span{display:inline-flex;align-items:center;gap:14px;padding:12px 0 12px 14px;font:700 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--bone2);white-space:nowrap}
+.tick span:after{content:'';width:5px;height:5px;background:var(--red);border-radius:50%;display:inline-block}
+.tick:hover .tr{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* Testimonials */
+.quotes{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:14px -18px 0;padding:0 18px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.quotes::-webkit-scrollbar{display:none}
+.qc{flex:0 0 86%;scroll-snap-align:start;background:var(--ink2);border:1px solid var(--line);border-top:3px solid var(--red);padding:18px 16px 16px;border-radius:2px;display:flex;flex-direction:column;gap:14px}
+.qc q{quotes:none;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.35;color:var(--bone)}
+.qc q:before{content:'\201C';color:var(--red2);font-style:normal;margin-right:2px}
+.qc figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.qc .av{width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:15px;flex:none}
+.qc b{display:block;font-size:14.5px}.qc small{display:block;color:var(--mute);font-size:12.5px;line-height:1.3}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:-4px}.dots i{width:18px;height:3px;background:var(--line);transition:background .2s}.dots i.on{background:var(--red)}
+.btn:active,.brc:active{transform:scale(.985)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}html.js .rv{opacity:1;transform:none}.cue{display:none}.tick .tr{animation:none}}
 
 </style></head><body><main class="w">
 
@@ -193,6 +213,7 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 <a class="cue a a6" id="cue" href="#story" aria-label="Scroll for more"><i></i>Scroll</a>
 </div>
 </section>
+<div class="tick" aria-label="About Travis"><div class="tr"><span>Forbes Business Council member</span><span>Built 12+ seven-figure businesses</span><span>1,000+ men coached</span><span>U.S. Marine veteran</span><span>Former SWAT operator</span><span>Husband &amp; father first</span><span>Host, Notorious Sinner Podcast</span><span>Founder, The King's Foundation</span><span>Forbes Business Council member</span><span>Built 12+ seven-figure businesses</span><span>1,000+ men coached</span><span>U.S. Marine veteran</span><span>Former SWAT operator</span><span>Husband &amp; father first</span><span>Host, Notorious Sinner Podcast</span><span>Founder, The King's Foundation</span></div></div>
 
 <div class="pad">
 <!-- Flow: 1 branch -> 2 identity -> 3 unlocked. Captured in Netlify Forms ("contact-save") + Zapier. -->
@@ -245,6 +266,18 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
 <h2>Same pit. <em>Climbed out.</em></h2>
 <p class="story">Marine veteran, former SWAT leader and undercover detective. Founder of <b>UNSTUCK</b> and The King's Foundation. For the last decade I've pulled founders, fathers, Marines and pastors out of the same pit I climbed out of. Mindset rewiring, legacy systems, Kingdom discipline.</p>
 <div class="stats rv d1"><div><b data-count="1000" data-suffix="+">1,000+</b><small>Men coached</small></div><div><b>USMC</b><small>Marine veteran</small></div><div><b>SWAT</b><small>Former leader</small></div></div>
+</section>
+
+<section class="sec rv" id="words">
+<div class="eyebrow">In their words</div>
+<h2>What men say <em>about Travis.</em></h2>
+<div class="quotes" id="quotes">
+<figure class="qc"><q>Travis is a true leader, mentor, and man of faith. He leads with integrity and treats everyone with kindness and respect.</q><figcaption><span class="av">DS</span><span><b>Devin Smith</b><small>Dallas Cowboys wide receiver</small></span></figcaption></figure>
+<figure class="qc"><q>His expertise in leadership, strategy, and culture-building has been instrumental in helping entrepreneurs create lasting impact.</q><figcaption><span class="av">SW</span><span><b>Steve Weatherford</b><small>NFL Super Bowl champion</small></span></figcaption></figure>
+<figure class="qc"><q>No matter the challenges, he keeps moving forward with resilience. A righteous man falls seven times but rises again.</q><figcaption><span class="av">JC</span><span><b>Josh Craft</b><small>Co-Pastor, Elevate Life Church</small></span></figcaption></figure>
+<figure class="qc"><q>Travis challenges you to grow and holds you accountable, exactly what we need as men. If you're considering working with him, lean in.</q><figcaption><span class="av">TS</span><span><b>Taylor Symmank</b><small>Former NFL punter, performance coach</small></span></figcaption></figure>
+</div>
+<div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
 </section>
 
 <section class="sec rv" id="eco">
@@ -362,6 +395,9 @@ html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.j
   // returning visitor: straight to their unlocked card
   try{var m=JSON.parse(localStorage.getItem('cc')||'null');if(m&&m.f&&m.k){branch=m.k;lead={back:true};unlock(m.f,m.k);lead={}}}catch(x){}
   var f0=(qs.get('for')||'').toLowerCase();if(!unlocked&&(f0==='help'||f0==='biz'||f0==='connect')){var bb=document.querySelector('.brc[data-k='+f0+']');if(bb){flow.classList.add('on');bb.click()}}
+
+  // testimonial dots
+  var qz=$('quotes'),dots=$('dots').children;qz.addEventListener('scroll',function(){var k=Math.round(qz.scrollLeft/(qz.firstElementChild.offsetWidth+10));for(var i=0;i<dots.length;i++)dots[i].classList.toggle('on',i===k)},{passive:true});
 
   // ---- Scan mode ----
 function qrMatrix(text){
